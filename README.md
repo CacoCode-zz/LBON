@@ -54,7 +54,7 @@
     - <code>IsBetween</code>
 - ### Object Extensions 
     - <code>GetDisplayName</code>
-    - <code>GetDisplayName</code>
+    - <code>GetDescription</code>
     - <code>GetTypeDisplayOrDescription</code>
     - <code>IsRequired</code>
     - <code>GetAttribute</code>
