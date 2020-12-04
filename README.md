@@ -2,7 +2,7 @@
 [![Github Build Status](https://github.com/CacoCode/LBON/workflows/LBON_MASTER/badge.svg?branch=master)](https://github.com/CacoCode/LBON/actions?query=workflow%3ALBON_MASTER+branch%3Amaster)
 
 # 简介
-.Net 高可用、搞效率的扩展组件，希望对 .NET 开发者及爱好者带来便捷，告别996，远离ICU！！！
+.Net 高可用、高效率的扩展组件，希望对 .NET 开发者及爱好者带来便捷，告别996，远离ICU！！！
 
 # 功能模块
 ## Extensions
