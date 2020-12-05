@@ -4,6 +4,13 @@
 # 简介
 .Net 高可用、高效率的扩展组件，希望对 .NET 开发者及爱好者带来便捷，告别996，远离ICU！！！
 
+# Nuget
+
+| **名称** |      **Nuget**      |
+|----------|:-------------:|
+| **LBON.Consts** | **[![NuGet](https://buildstats.info/nuget/LBON.Consts)](https://www.nuget.org/packages/LBON.Consts)** |
+| **LBON.Extensions** | **[![NuGet](https://buildstats.info/nuget/LBON.Extensions)](https://www.nuget.org/packages/LBON.Extensions)** |
+
 # 功能模块
 ## Extensions
 - ### String Extensions
