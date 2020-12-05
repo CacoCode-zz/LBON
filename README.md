@@ -48,7 +48,11 @@
     - <code>RenameColumn</code>
     - <code>RemoveColumn</code>
 - ### Image Extensions
-    - <code>ToBase64String</code>
+    - <code>ToBase64</code>
+    - <code>ToBytes</code>
+    - <code>ToImage</code>
+    - <code>ToIcoStream</code>
+    - <code>ScaleImage</code>
 - ### DecimalOrInt Extensions 
     - <code>ToChineseAmount</code>
     - <code>IsBetween</code>
