@@ -41,6 +41,9 @@
     - <code>Encrypt</code>
     - <code>Decrypt</code>
     - <code>Mask</code> &nbsp;&nbsp;&nbsp; "123456" to "12**56"
+    - <code>MaskMobile</code>
+    - <code>MaskIdCard</code>
+    - <code>MaskBankCard</code>
     - <code>FirstToUpper</code>
     - <code>PopL</code>
     - <code>PopR</code>

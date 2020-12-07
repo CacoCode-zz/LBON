@@ -427,6 +427,54 @@ namespace LBON.Extensions
             return maskedString;
         }
 
+        /// <summary>
+        /// Masks the mobile.
+        /// </summary>
+        /// <param name="mobile">The mobile.</param>
+        /// <returns></returns>
+        public static string MaskMobile(this string mobile)
+        {
+            if (!mobile.IsNullOrEmpty() && mobile.Length > 7)
+            {
+                var regex = new Regex(@"(?<=\d{3}).+(?=\d{4})", RegexOptions.IgnoreCase);
+                mobile = regex.Replace(mobile, "****");
+            }
+
+            return mobile;
+        }
+
+        /// <summary>
+        /// Masks the identifier card.
+        /// </summary>
+        /// <param name="idCard">The identifier card.</param>
+        /// <returns></returns>
+        public static string MaskIdCard(this string idCard)
+        {
+            if (!idCard.IsNullOrEmpty() && idCard.Length > 10)
+            {
+                var regex = new Regex(@"(?<=\w{6}).+(?=\w{4})", RegexOptions.IgnoreCase);
+                idCard = regex.Replace(idCard, "********");
+            }
+
+            return idCard;
+        }
+
+        /// <summary>
+        /// Masks the bank card.
+        /// </summary>
+        /// <param name="bankCard">The bank card.</param>
+        /// <returns></returns>
+        public static string MaskBankCard(this string bankCard)
+        {
+            if (!bankCard.IsNullOrEmpty() && bankCard.Length > 4)
+            {
+                var regex = new Regex(@"(?<=\d{4})\d+(?=\d{4})", RegexOptions.IgnoreCase);
+                bankCard = regex.Replace(bankCard, " **** **** ");
+            }
+
+            return bankCard;
+        }
+
         /// <summary>Determines whether [is length at least] [the specified length].</summary>
         /// <param name="str">The string.</param>
         /// <param name="length">The length.</param>
