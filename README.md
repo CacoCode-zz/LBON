@@ -11,7 +11,7 @@
 | **LBON.Consts** | **[![NuGet](https://buildstats.info/nuget/LBON.Consts)](https://www.nuget.org/packages/LBON.Consts)** |
 | **LBON.Extensions** | **[![NuGet](https://buildstats.info/nuget/LBON.Extensions)](https://www.nuget.org/packages/LBON.Extensions)** |
 
-# 功能模块
+# 功能模块(1.0.1)
 ## Extensions
 - ### String Extensions
     - <code>IsNullOrWhiteSpace</code>
@@ -69,6 +69,16 @@
     - <code>GetTypeDisplayOrDescription</code>
     - <code>IsRequired</code>
     - <code>GetAttribute</code>
+    - <code>EnumToList</code>
+    - <code>EnumToDictionary</code>
+- ### Xml Extensions 
+    - <code>FromXml</code>
+    - <code>Deserialize</code>
+- ### Enumerable Extensions 
+    - <code>Join</code>
+- ### DateTime Extensions 
+    - <code>FirstOfMonth</code>
+    - <code>LastOfMonth</code>
 ## Consts
 - ### [MediaType](LBON.Consts/MediaTypeConst.cs)
 - ### [Regex](LBON.Consts/RegexConst.cs)

@@ -82,5 +82,44 @@ namespace LBON.Extensions
                 .OfType<T>()
                 .FirstOrDefault();
         }
+
+        /// <summary>
+        /// Enums to list.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException">T must be of type System.Enum</exception>
+        public static List<T> EnumToList<T>()
+        {
+            var enumType = typeof(T);
+
+            if (enumType.BaseType != typeof(Enum))
+                throw new ArgumentException("T must be of type System.Enum");
+
+            var enumValArray = Enum.GetValues(enumType);
+
+            var enumValList = new List<T>(enumValArray.Length);
+            enumValList.AddRange(from int val in enumValArray select (T)Enum.Parse(enumType, val.ToString()));
+            return enumValList;
+        }
+
+        /// <summary>
+        /// Enums to dictionary.
+        /// </summary>
+        /// <param name="t">The t.</param>
+        /// <returns></returns>
+        /// <exception cref="NullReferenceException"></exception>
+        /// <exception cref="InvalidCastException">object is not an Enumeration</exception>
+        public static IDictionary<string, int> EnumToDictionary(this Type t)
+        {
+            if (t == null) throw new NullReferenceException();
+            if (!t.IsEnum) throw new InvalidCastException("object is not an Enumeration");
+
+            var names = Enum.GetNames(t);
+            var values = Enum.GetValues(t);
+
+            return (from i in Enumerable.Range(0, names.Length)
+                select new { Key = names[i], Value = (int)values.GetValue(i) }).ToDictionary(k => k.Key, k => k.Value);
+        }
     }
 }
