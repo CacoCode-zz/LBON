@@ -134,34 +134,6 @@ namespace LBON.Extensions
             return regex.IsMatch(str);
         }
 
-        /// <summary>Pops the l.</summary>
-        /// <param name="str">The string.</param>
-        /// <param name="count">The count.</param>
-        /// <returns>
-        ///   <br />
-        /// </returns>
-        /// <exception cref="IndexOutOfRangeException"></exception>
-        public static string PopL(this string str, int count = 1)
-        {
-            if (count > str.Length || count < 0)
-                throw new IndexOutOfRangeException();
-            return str.Substring(count);
-        }
-
-        /// <summary>Pops the r.</summary>
-        /// <param name="str">The string.</param>
-        /// <param name="count">The count.</param>
-        /// <returns>
-        ///   <br />
-        /// </returns>
-        /// <exception cref="IndexOutOfRangeException"></exception>
-        public static string PopR(this string str, int count = 1)
-        {
-            if (count > str.Length || count < 0)
-                throw new IndexOutOfRangeException();
-            return str.Substring(0, str.Length - count);
-        }
-
         /// <summary>Determines whether the specified value is contains.</summary>
         /// <param name="str">The string.</param>
         /// <param name="value">The value.</param>
