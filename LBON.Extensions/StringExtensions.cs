@@ -1019,6 +1019,24 @@ namespace LBON.Extensions
             return str.Left(maxLength - postfix.Length) + postfix;
         }
 
+        /// <summary>
+        /// Read file context.
+        /// </summary>
+        /// <param name="filePath"></param>
+        /// <returns></returns>
+        public static string ReadFile(this string filePath)
+        {
+            string context = string.Empty;
+            using (FileStream fs = new FileStream(filePath, FileMode.Open))
+            {
+                using (StreamReader sr = new StreamReader(fs, Encoding.UTF8))
+                {
+                    context = sr.ReadToEnd().ToString();
+                }
+            }
+            return context;
+        }
+
         private static void CreateAlphaNumMask(StringBuilder buffer, string source, char mask, int length)
         {
             for (int i = 0; i < length; i++)
