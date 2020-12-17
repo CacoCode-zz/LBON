@@ -5,15 +5,16 @@
     <Description>Lu Ban Of .Net - .Net 高可用、高效率的扩展组件</Description>
     <ReleaseVersion>0.0.1</ReleaseVersion>
     <SynchReleaseVersion>false</SynchReleaseVersion>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
     <PackageIcon>logo.png</PackageIcon>
-    <Copyright>CodePlus</Copyright>
+    <Copyright>CacoCode</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/CacoCode/LBON</PackageProjectUrl>
     <RepositoryUrl>https://github.com/CacoCode/LBON</RepositoryUrl>
     <NeutralLanguage />
     <PackageTags>extensions</PackageTags>
     <PackageLicenseExpression></PackageLicenseExpression>
+    <Authors>CacoCode</Authors>
   </PropertyGroup>
 
   <ItemGroup>
@@ -34,6 +35,10 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Commons\" />
   </ItemGroup>
 
 </Project>
