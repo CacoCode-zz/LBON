@@ -4,7 +4,3 @@
 - <code>FindNthWeekDayOfMonth</code>
 - <code>TotalInstancesInMonth</code>
 - <code>TotalInstancesInMonth</code>
-- <code>GetType</code>
-- <code>ToString</code>
-- <code>Equals</code>
-- <code>GetHashCode</code>

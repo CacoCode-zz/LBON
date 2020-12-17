@@ -60,7 +60,3 @@
 - <code>TruncateWithPostfix</code>
 - <code>TruncateWithPostfix</code>
 - <code>ReadFile</code>
-- <code>GetType</code>
-- <code>ToString</code>
-- <code>Equals</code>
-- <code>GetHashCode</code>

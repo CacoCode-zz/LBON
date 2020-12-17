@@ -1,0 +1,2 @@
+# HttpResponseExtensions
+- <code>SetCookie</code>

@@ -1,0 +1,2 @@
+# FileHelper
+- <code>DeleteIfExists</code>

@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LBON.Extensions\LBON.Extensions.csproj" />
+    <ProjectReference Include="..\LBON.Helper\LBON.Helper.csproj" />
   </ItemGroup>
 
 </Project>

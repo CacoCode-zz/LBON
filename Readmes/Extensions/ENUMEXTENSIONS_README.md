@@ -1,0 +1,2 @@
+# EnumExtensions
+- <code>GetDisplayName</code>

@@ -9,7 +9,3 @@
 - <code>As</code>
 - <code>To</code>
 - <code>IsIn</code>
-- <code>GetType</code>
-- <code>ToString</code>
-- <code>Equals</code>
-- <code>GetHashCode</code>

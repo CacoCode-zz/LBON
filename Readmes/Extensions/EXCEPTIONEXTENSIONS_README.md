@@ -1,0 +1,2 @@
+# ExceptionExtensions
+- <code>ReThrow</code>

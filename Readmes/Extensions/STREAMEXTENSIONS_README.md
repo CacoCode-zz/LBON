@@ -1,0 +1,2 @@
+# StreamExtensions
+- <code>GetAllBytes</code>
