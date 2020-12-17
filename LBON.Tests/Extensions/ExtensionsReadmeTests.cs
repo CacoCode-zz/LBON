@@ -16,11 +16,7 @@ namespace LBON.Tests.Extensions
             var classes = Assembly.Load("LBON.Extensions").GetTypes().Where(a => a.Name.EndsWith("Extensions")).ToList();
             foreach (var item in classes)
             {
-                var dirPath = Path.Combine(Directory.GetCurrentDirectory(), "readmes");
-                if (!Directory.Exists(dirPath))
-                {
-                    Directory.CreateDirectory(dirPath);
-                }
+                var dirPath = "E:\\Codes\\LBON\\Readmes";
                 var filePath = Path.Combine(dirPath, $"{item.Name.ToUpper()}_README.md");
                 if (File.Exists(filePath))
                 {

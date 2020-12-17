@@ -1,0 +1,15 @@
+# ObjectExtensions
+- <code>GetDisplayName</code>
+- <code>GetDescription</code>
+- <code>GetTypeDisplayOrDescription</code>
+- <code>IsRequired</code>
+- <code>GetAttribute</code>
+- <code>EnumToList</code>
+- <code>EnumToDictionary</code>
+- <code>As</code>
+- <code>To</code>
+- <code>IsIn</code>
+- <code>GetType</code>
+- <code>ToString</code>
+- <code>Equals</code>
+- <code>GetHashCode</code>

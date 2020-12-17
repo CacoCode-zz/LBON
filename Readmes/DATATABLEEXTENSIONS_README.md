@@ -1,0 +1,15 @@
+# DataTableExtensions
+- <code>ToList</code>
+- <code>ToDataTable</code>
+- <code>ToXml</code>
+- <code>SelectDistinct</code>
+- <code>SelectDistinct</code>
+- <code>SelectRows</code>
+- <code>Duplicate</code>
+- <code>EqualsByContent</code>
+- <code>RenameColumn</code>
+- <code>RemoveColumn</code>
+- <code>GetType</code>
+- <code>ToString</code>
+- <code>Equals</code>
+- <code>GetHashCode</code>
