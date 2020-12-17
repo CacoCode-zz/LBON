@@ -1027,6 +1027,10 @@ namespace LBON.Extensions
         public static string ReadFile(this string filePath)
         {
             string context = string.Empty;
+            if (!File.Exists(filePath))
+            {
+                throw new IOException($"'{filePath}'file not exist");
+            }
             using (FileStream fs = new FileStream(filePath, FileMode.Open))
             {
                 using (StreamReader sr = new StreamReader(fs, Encoding.UTF8))
