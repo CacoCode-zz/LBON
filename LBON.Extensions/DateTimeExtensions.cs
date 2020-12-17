@@ -117,5 +117,23 @@ namespace LBON.Extensions
         {
             return new DateTime(date.Year, date.Month, date.Day, date.Hour, date.Minute, date.Second, date.Kind);
         }
+
+        /// <summary>
+        /// Clears the time.
+        /// </summary>
+        /// <param name="dateTime">The date time.</param>
+        /// <returns></returns>
+        public static DateTime ClearTime(this DateTime dateTime)
+        {
+            return dateTime.Subtract(
+                new TimeSpan(
+                    0,
+                    dateTime.Hour,
+                    dateTime.Minute,
+                    dateTime.Second,
+                    dateTime.Millisecond
+                )
+            );
+        }
     }
 }

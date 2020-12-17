@@ -1,0 +1,17 @@
+# AbpListExtensions
+- <code>InsertRange</code>
+- <code>FindIndex</code>
+- <code>AddFirst</code>
+- <code>AddLast</code>
+- <code>InsertAfter</code>
+- <code>InsertAfter</code>
+- <code>InsertBefore</code>
+- <code>InsertBefore</code>
+- <code>ReplaceWhile</code>
+- <code>ReplaceWhile</code>
+- <code>ReplaceOne</code>
+- <code>ReplaceOne</code>
+- <code>ReplaceOne</code>
+- <code>MoveItem</code>
+- <code>GetOrAdd</code>
+- <code>SortByDependencies</code>

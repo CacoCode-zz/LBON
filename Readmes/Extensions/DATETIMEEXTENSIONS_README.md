@@ -8,3 +8,4 @@
 - <code>TotalDaysInMonth</code>
 - <code>ToDateTimeUnspecified</code>
 - <code>TrimMilliseconds</code>
+- <code>ClearTime</code>
