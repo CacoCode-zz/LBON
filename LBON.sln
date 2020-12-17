@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LBON.Consts", "LBON.Consts\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LBON.Extensions", "LBON.Extensions\LBON.Extensions.csproj", "{1FE8124D-2ADE-44C1-AEA1-C449C3E4534C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LBON.Helper", "LBON.Helper\LBON.Helper.csproj", "{18908BD4-ECE4-4542-B932-26B2A0833E2A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{1FE8124D-2ADE-44C1-AEA1-C449C3E4534C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FE8124D-2ADE-44C1-AEA1-C449C3E4534C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FE8124D-2ADE-44C1-AEA1-C449C3E4534C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18908BD4-ECE4-4542-B932-26B2A0833E2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18908BD4-ECE4-4542-B932-26B2A0833E2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18908BD4-ECE4-4542-B932-26B2A0833E2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18908BD4-ECE4-4542-B932-26B2A0833E2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
