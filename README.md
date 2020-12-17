@@ -10,6 +10,7 @@
 |----------|:-------------:|
 | **LBON.Consts** | **[![NuGet](https://buildstats.info/nuget/LBON.Consts)](https://www.nuget.org/packages/LBON.Consts)** |
 | **LBON.Extensions** | **[![NuGet](https://buildstats.info/nuget/LBON.Extensions)](https://www.nuget.org/packages/LBON.Extensions)** |
+| **LBON.Helper** | **[![NuGet](https://buildstats.info/nuget/LBON.Helper)](https://www.nuget.org/packages/LBON.Helper)** |
 
 # 功能模块(1.0.2)
 ## Extensions
