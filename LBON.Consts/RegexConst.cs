@@ -12,7 +12,7 @@ namespace LBON.Consts
 
         public const string Email = @"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$";
 
-        public const string Url = @"http(s)?://([\w-]+\.)+[\w-]+(/[\w-./?%&=]*)?";
+        public const string Url = @"^(ht|f)tp(s?)\:\/\/[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\'\/\\\+&%\$#_]*)?$";
 
         public const string Date = @"(\d{4})-(\d{1,2})-(\d{1,2})";
 
