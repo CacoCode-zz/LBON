@@ -1,24 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-using Xunit;
 
-namespace LBON.Tests
+namespace Readme.Generator
 {
-    public class GenerateReadmes
+    class Program
     {
-        [Fact]
-        public void Run_Test()
+        static void Main(string[] args)
         {
+            Console.WriteLine("========================Generate Extensions Readmes Start========================");
             GenerateExtensionsReadmes();
+            Console.WriteLine("========================Generate Extensions Readmes End========================");
+            Console.WriteLine("========================Generate Heleper Readmes Start========================");
             GenerateHeleperReadmes();
+            Console.WriteLine("========================Generate Heleper Readmes End========================");
         }
 
-        private void GenerateExtensionsReadmes()
+        private static void GenerateExtensionsReadmes()
         {
             var classes = Assembly.Load("LBON.Extensions").GetTypes().Where(a => a.Name.EndsWith("Extensions")).ToList();
             foreach (var item in classes)
@@ -41,10 +42,11 @@ namespace LBON.Tests
                     byte[] data = Encoding.UTF8.GetBytes(content);
                     fileStream.Write(data, 0, data.Length);
                 }
+                Console.WriteLine($"已生成 {item.Name.ToUpper()}_README.md");
             }
         }
 
-        private void GenerateHeleperReadmes()
+        private static void GenerateHeleperReadmes()
         {
             var classes = Assembly.Load("LBON.Helper").GetTypes().Where(a => a.Name.EndsWith("Helper")).ToList();
             foreach (var item in classes)
@@ -67,6 +69,7 @@ namespace LBON.Tests
                     byte[] data = Encoding.UTF8.GetBytes(content);
                     fileStream.Write(data, 0, data.Length);
                 }
+                Console.WriteLine($"已生成 {item.Name.ToUpper()}_README.md");
             }
         }
     }
