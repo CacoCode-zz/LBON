@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Linq;
 
 namespace LBON.Extensions
@@ -11,6 +12,7 @@ namespace LBON.Extensions
         /// <summary>
         /// Check if a given <see cref="DayOfWeek"/> value is weekend.
         /// </summary>
+        [Description("检查给定值是否为周末")]
         public static bool IsWeekend(this DayOfWeek dayOfWeek)
         {
             return dayOfWeek.IsIn(DayOfWeek.Saturday, DayOfWeek.Sunday);
@@ -19,6 +21,7 @@ namespace LBON.Extensions
         /// <summary>
         /// Check if a given <see cref="DayOfWeek"/> value is weekday.
         /// </summary>
+        [Description("检查给定值是否为工作日")]
         public static bool IsWeekday(this DayOfWeek dayOfWeek)
         {
             return dayOfWeek.IsIn(DayOfWeek.Monday, DayOfWeek.Tuesday, DayOfWeek.Wednesday, DayOfWeek.Thursday, DayOfWeek.Friday);
@@ -32,6 +35,7 @@ namespace LBON.Extensions
         /// <param name="month">The month.</param>
         /// <param name="n">The nth instance.</param>
         /// <remarks>Compensates for 4th and 5th DayOfWeek of Month</remarks>
+        [Description("查找一个月的第n周")]
         public static DateTime FindNthWeekDayOfMonth(this DayOfWeek dayOfWeek, int year, int month, int n)
         {
             if (n < 1 || n > 5)
@@ -64,6 +68,7 @@ namespace LBON.Extensions
         /// <param name="year">The year.</param>
         /// <param name="month">The month.</param>
         /// <returns></returns>
+        [Description("获取一个月内特定DayOfWeek的实例总数")]
         public static int TotalInstancesInMonth(this DayOfWeek dayOfWeek, int year, int month)
         {
             return DateTimeExtensions.DaysOfMonth(year, month).Count(date => dayOfWeek.Equals(date.DayOfWeek));
@@ -75,6 +80,7 @@ namespace LBON.Extensions
         /// <param name="dayOfWeek">The day of week.</param>
         /// <param name="dateTime">The date in a month.</param>
         /// <returns></returns>
+        [Description("获取一个月内特定DayOfWeek的实例总数")]
         public static int TotalInstancesInMonth(this DayOfWeek dayOfWeek, DateTime dateTime)
         {
             return dayOfWeek.TotalInstancesInMonth(dateTime.Year, dateTime.Month);

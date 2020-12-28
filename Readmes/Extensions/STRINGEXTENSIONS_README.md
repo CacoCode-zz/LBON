@@ -1,62 +1,63 @@
 # StringExtensions
-- <code>IsNullOrWhiteSpace</code>
-- <code>IsNullOrEmpty</code>
-- <code>Copy</code>
-- <code>GetPhoneNumber</code>
-- <code>GetPhoneNumbers</code>
-- <code>RegexMatch</code>
-- <code>RegexMatches</code>
-- <code>ToInt</code>
-- <code>ToDecimal</code>
-- <code>IsNumeric</code>
-- <code>IsContains</code>
-- <code>In</code>
-- <code>Format</code>
-- <code>Format</code>
-- <code>Encrypt</code>
-- <code>Decrypt</code>
-- <code>FirstToUpper</code>
-- <code>ToSecureString</code>
-- <code>IsDate</code>
-- <code>IsEmailAddress</code>
-- <code>Parse</code>
-- <code>IsGuid</code>
-- <code>IsUrl</code>
-- <code>Mask</code>
-- <code>MaskMobile</code>
-- <code>MaskIdCard</code>
-- <code>MaskBankCard</code>
-- <code>IsLengthAtLeast</code>
-- <code>IsStrongPassword</code>
-- <code>IsMatchRegex</code>
-- <code>ToBytes</code>
-- <code>ToColor</code>
-- <code>EnsureEndsWith</code>
-- <code>EnsureEndsWith</code>
-- <code>EnsureEndsWith</code>
-- <code>EnsureStartsWith</code>
-- <code>EnsureStartsWith</code>
-- <code>EnsureStartsWith</code>
-- <code>Left</code>
-- <code>NormalizeLineEndings</code>
-- <code>NthIndexOf</code>
-- <code>RemovePostFix</code>
-- <code>RemovePreFix</code>
-- <code>Right</code>
-- <code>Split</code>
-- <code>Split</code>
-- <code>SplitToLines</code>
-- <code>SplitToLines</code>
-- <code>ToCamelCase</code>
-- <code>ToCamelCase</code>
-- <code>ToSentenceCase</code>
-- <code>ToSentenceCase</code>
-- <code>ToEnum</code>
-- <code>ToEnum</code>
-- <code>ToMd5</code>
-- <code>ToPascalCase</code>
-- <code>ToPascalCase</code>
-- <code>Truncate</code>
-- <code>TruncateWithPostfix</code>
-- <code>TruncateWithPostfix</code>
-- <code>ReadFile</code>
+- <code>IsNullOrWhiteSpace</code> 检查是否为NULL或空格
+- <code>IsNullOrEmpty</code> 检查是否为NULL或空
+- <code>Copy</code> 复制
+- <code>GetPhoneNumber</code> 获取单个手机号
+- <code>GetPhoneNumbers</code> 获取全部手机号
+- <code>RegexMatch</code> 正则匹配单个
+- <code>RegexMatches</code> 正则匹配多个
+- <code>ToInt</code> String转换Int
+- <code>ToDecimal</code> String转换Decimal
+- <code>IsNumeric</code> 是否为数字
+- <code>IsContains</code> 是否包含
+- <code>In</code> 是否存在数组中
+- <code>Format</code> 格式化
+- <code>Format</code> 
+- <code>Encrypt</code> RSA加密
+- <code>Decrypt</code> RSA解密
+- <code>FirstToUpper</code> 首字母大写
+- <code>ToSecureString</code> 转换为安全字符串
+- <code>IsDate</code> 转换为日期
+- <code>IsEmailAddress</code> 是否为邮箱地址
+- <code>Parse</code> 转换为任何格式
+- <code>IsGuid</code> 是否为Guid
+- <code>IsUrl</code> 是否为地址
+- <code>Mask</code> 屏蔽字符，如：123***789
+- <code>MaskMobile</code> 屏蔽手机号
+- <code>MaskIdCard</code> 屏蔽身份证
+- <code>MaskBankCard</code> 屏蔽银行卡
+- <code>IsLengthAtLeast</code> 判断是否为最后一位字符
+- <code>IsStrongPassword</code> 判断是否为强壮密码
+- <code>IsMatchRegex</code> 是否正则匹配通过
+- <code>ToBytes</code> 文件物理地址转换为字节数组
+- <code>ToColor</code> 转换为Color
+- <code>EnsureEndsWith</code> 如果给定字符串不以[char]结尾，则在其结尾添加[char]
+- <code>EnsureEndsWith</code> 
+- <code>EnsureEndsWith</code> 
+- <code>EnsureStartsWith</code> 如果给定字符串不以[char]开头，则在其开头添加[char]
+- <code>EnsureStartsWith</code> 
+- <code>EnsureStartsWith</code> 
+- <code>Left</code> 从字符串的开头获取指定长度字符串
+- <code>NormalizeLineEndings</code> 将字符串中的行尾转换为Environment.NewLine
+- <code>NthIndexOf</code> 获取字符串中第n个字符的索引
+- <code>RemovePostFix</code> 从给定字符串的末尾删除第一个出现的给定后缀
+- <code>RemovePreFix</code> 从给定字符串的开头移除第一个出现的给定前缀
+- <code>Right</code> 从字符串的结尾获取指定长度字符串
+- <code>Split</code> 字符串拆分
+- <code>Split</code> 
+- <code>SplitToLines</code> 字符串换行拆分
+- <code>SplitToLines</code> 
+- <code>ToCamelCase</code> 将PascalCase字符串转换为camelCase字符串
+- <code>ToCamelCase</code> 
+- <code>ToSentenceCase</code> 将给定的PascalCase/camelCase字符串转换为句子（通过按空格拆分单词）
+- <code>ToSentenceCase</code> 
+- <code>ToEnum</code> 将字符串转换为枚举值
+- <code>ToEnum</code> 
+- <code>ToMd5</code> 将字符串转换为MD5
+- <code>ToPascalCase</code> 将camelCase字符串转换为pascalase字符串
+- <code>ToPascalCase</code> 
+- <code>Truncate</code> 如果指定长度超过最大长度，则从该字符串的开头获取指定长度的字符
+- <code>TruncateWithPostfix</code> 
+- <code>TruncateWithPostfix</code> 
+- <code>ReadFile</code> 通过文件物理路径获取文件文本
+- <code>VerifySort</code> 验证文本数字，如'1,2,3'；是否按指定排序

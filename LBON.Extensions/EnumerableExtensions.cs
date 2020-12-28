@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 
 namespace LBON.Extensions
@@ -16,6 +17,7 @@ namespace LBON.Extensions
         /// <param name="source">A collection that contains the strings to concatenate.</param>
         /// <param name="separator">The string to use as a separator. separator is included in the returned string only if values has more than one element.</param>
         /// <returns>A string that consists of the members of values delimited by the separator string. If values has no members, the method returns System.String.Empty.</returns>
+        [Description("Enumerable转换String")]
         public static string JoinAsString(this IEnumerable<string> source, string separator)
         {
             return string.Join(separator, source);
@@ -41,6 +43,7 @@ namespace LBON.Extensions
         /// <param name="condition">A boolean value</param>
         /// <param name="predicate">Predicate to filter the enumerable</param>
         /// <returns>Filtered or not filtered enumerable based on <paramref name="condition"/></returns>
+        [Description("Enumerable筛选")]
         public static IEnumerable<T> WhereIf<T>(this IEnumerable<T> source, bool condition, Func<T, bool> predicate)
         {
             return condition

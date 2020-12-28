@@ -1,4 +1,4 @@
 # StreamExtensions
-- <code>GetAllBytes</code>
-- <code>GetAllBytesAsync</code>
-- <code>CopyToAsync</code>
+- <code>GetAllBytes</code> 获取字节数组
+- <code>GetAllBytesAsync</code> 
+- <code>CopyToAsync</code> 复制

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using JetBrains.Annotations;
 
@@ -8,8 +9,16 @@ namespace LBON.Extensions
     /// <summary>
     /// Extension methods for <see cref="IList{T}"/>.
     /// </summary>
-    public static class AbpListExtensions
+    public static class ListExtensions
     {
+        /// <summary>
+        /// Inserts the range.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source">The source.</param>
+        /// <param name="index">The index.</param>
+        /// <param name="items">The items.</param>
+        [Description("插入多个")]
         public static void InsertRange<T>(this IList<T> source, int index, IEnumerable<T> items)
         {
             foreach (var item in items)
@@ -18,6 +27,14 @@ namespace LBON.Extensions
             }
         }
 
+        /// <summary>
+        /// Finds the index.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source">The source.</param>
+        /// <param name="selector">The selector.</param>
+        /// <returns></returns>
+        [Description("查找索引")]
         public static int FindIndex<T>(this IList<T> source, Predicate<T> selector)
         {
             for (var i = 0; i < source.Count; ++i)
@@ -31,16 +48,38 @@ namespace LBON.Extensions
             return -1;
         }
 
+        /// <summary>
+        /// Adds the first.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source">The source.</param>
+        /// <param name="item">The item.</param>
+        [Description("在开头插入")]
         public static void AddFirst<T>(this IList<T> source, T item)
         {
             source.Insert(0, item);
         }
 
+        /// <summary>
+        /// Adds the last.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source">The source.</param>
+        /// <param name="item">The item.</param>
+        [Description("在结尾插入")]
         public static void AddLast<T>(this IList<T> source, T item)
         {
             source.Insert(source.Count, item);
         }
 
+        /// <summary>
+        /// Inserts the after.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source">The source.</param>
+        /// <param name="existingItem">The existing item.</param>
+        /// <param name="item">The item.</param>
+        [Description("在...之后插入")]
         public static void InsertAfter<T>(this IList<T> source, T existingItem, T item)
         {
             var index = source.IndexOf(existingItem);
@@ -53,6 +92,13 @@ namespace LBON.Extensions
             source.Insert(index + 1, item);
         }
 
+        /// <summary>
+        /// Inserts the after.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source">The source.</param>
+        /// <param name="selector">The selector.</param>
+        /// <param name="item">The item.</param>
         public static void InsertAfter<T>(this IList<T> source, Predicate<T> selector, T item)
         {
             var index = source.FindIndex(selector);
@@ -65,6 +111,14 @@ namespace LBON.Extensions
             source.Insert(index + 1, item);
         }
 
+        /// <summary>
+        /// Inserts the before.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source">The source.</param>
+        /// <param name="existingItem">The existing item.</param>
+        /// <param name="item">The item.</param>
+        [Description("在...之前插入")]
         public static void InsertBefore<T>(this IList<T> source, T existingItem, T item)
         {
             var index = source.IndexOf(existingItem);
@@ -77,6 +131,13 @@ namespace LBON.Extensions
             source.Insert(index, item);
         }
 
+        /// <summary>
+        /// Inserts the before.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source">The source.</param>
+        /// <param name="selector">The selector.</param>
+        /// <param name="item">The item.</param>
         public static void InsertBefore<T>(this IList<T> source, Predicate<T> selector, T item)
         {
             var index = source.FindIndex(selector);
@@ -89,6 +150,14 @@ namespace LBON.Extensions
             source.Insert(index, item);
         }
 
+        /// <summary>
+        /// Replaces the while.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source">The source.</param>
+        /// <param name="selector">The selector.</param>
+        /// <param name="item">The item.</param>
+        [Description("替换")]
         public static void ReplaceWhile<T>(this IList<T> source, Predicate<T> selector, T item)
         {
             for (int i = 0; i < source.Count; i++)
@@ -100,6 +169,13 @@ namespace LBON.Extensions
             }
         }
 
+        /// <summary>
+        /// Replaces the while.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source">The source.</param>
+        /// <param name="selector">The selector.</param>
+        /// <param name="itemFactory">The item factory.</param>
         public static void ReplaceWhile<T>(this IList<T> source, Predicate<T> selector, Func<T, T> itemFactory)
         {
             for (int i = 0; i < source.Count; i++)
@@ -112,6 +188,14 @@ namespace LBON.Extensions
             }
         }
 
+        /// <summary>
+        /// Replaces the one.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source">The source.</param>
+        /// <param name="selector">The selector.</param>
+        /// <param name="item">The item.</param>
+        [Description("替换")]
         public static void ReplaceOne<T>(this IList<T> source, Predicate<T> selector, T item)
         {
             for (int i = 0; i < source.Count; i++)
@@ -124,6 +208,13 @@ namespace LBON.Extensions
             }
         }
 
+        /// <summary>
+        /// Replaces the one.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source">The source.</param>
+        /// <param name="selector">The selector.</param>
+        /// <param name="itemFactory">The item factory.</param>
         public static void ReplaceOne<T>(this IList<T> source, Predicate<T> selector, Func<T, T> itemFactory)
         {
             for (int i = 0; i < source.Count; i++)
@@ -137,6 +228,13 @@ namespace LBON.Extensions
             }
         }
 
+        /// <summary>
+        /// Replaces the one.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source">The source.</param>
+        /// <param name="item">The item.</param>
+        /// <param name="replaceWith">The replace with.</param>
         public static void ReplaceOne<T>(this IList<T> source, T item, T replaceWith)
         {
             for (int i = 0; i < source.Count; i++)
@@ -149,6 +247,15 @@ namespace LBON.Extensions
             }
         }
 
+        /// <summary>
+        /// Moves the item.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source">The source.</param>
+        /// <param name="selector">The selector.</param>
+        /// <param name="targetIndex">Index of the target.</param>
+        /// <exception cref="IndexOutOfRangeException">targetIndex should be between 0 and " + (source.Count - 1)</exception>
+        [Description("移动项")]
         public static void MoveItem<T>(this List<T> source, Predicate<T> selector, int targetIndex)
         {
             if (!targetIndex.IsBetween(0, source.Count - 1))
@@ -167,7 +274,15 @@ namespace LBON.Extensions
             source.Insert(targetIndex, item);
         }
 
-        [NotNull]
+        /// <summary>
+        /// Gets the or add.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source">The source.</param>
+        /// <param name="selector">The selector.</param>
+        /// <param name="factory">The factory.</param>
+        /// <returns></returns>
+        [Description("获取并添加")]
         public static T GetOrAdd<T>([NotNull] this IList<T> source, Func<T, bool> selector, Func<T> factory)
         {
             var item = source.FirstOrDefault(selector);
@@ -192,15 +307,12 @@ namespace LBON.Extensions
         /// Returns a new list ordered by dependencies.
         /// If A depends on B, then B will come before than A in the resulting list.
         /// </returns>
+        [Description("通过topological排序对列表进行排序，topological排序考虑了它们之间的依赖关系")]
         public static List<T> SortByDependencies<T>(
             this IEnumerable<T> source,
             Func<T, IEnumerable<T>> getDependencies,
             IEqualityComparer<T> comparer = null)
         {
-            /* See: http://www.codeproject.com/Articles/869059/Topological-sorting-in-Csharp
-             *      http://en.wikipedia.org/wiki/Topological_sorting
-             */
-
             var sorted = new List<T>();
             var visited = new Dictionary<T, bool>(comparer);
 

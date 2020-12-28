@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel;
 
 namespace LBON.Extensions
 {
@@ -12,6 +13,7 @@ namespace LBON.Extensions
         /// </summary>
         /// <param name="eventHandler">The event handler</param>
         /// <param name="sender">Source of the event</param>
+        [Description("使用给定参数安全引发给定事件")]
         public static void InvokeSafely(this EventHandler eventHandler, object sender)
         {
             eventHandler.InvokeSafely(sender, EventArgs.Empty);

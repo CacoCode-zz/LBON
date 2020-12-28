@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.ComponentModel;
+using System.Text.RegularExpressions;
 
 namespace LBON.Extensions
 {
@@ -9,6 +10,7 @@ namespace LBON.Extensions
         /// <returns>
         ///   <br />
         /// </returns>
+        [Description("换算成中文金额")]
         public static string ToChineseAmount(this decimal number)
         {
             return BuildChineseAmount(number);
@@ -30,6 +32,7 @@ namespace LBON.Extensions
         /// <param name="max">The maximum.</param>
         /// <returns>
         ///   <c>true</c> if the specified minimum is between; otherwise, <c>false</c>.</returns>
+        [Description("判断值是否介于两者之间")]
         public static bool IsBetween(this decimal number, decimal min, decimal max)
         {
             return number >= min && number <= max;

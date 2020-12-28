@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
@@ -12,6 +13,7 @@ namespace LBON.Extensions
         /// </summary>
         /// <param name="target">This DateTime</param>
         /// <returns></returns>
+        [Description("将日期时间转换为Unix时间戳")]
         public static double ToUnixTimestamp(this DateTime target)
         {
             var origin = new DateTime(1970, 1, 1, 0, 0, 0, 0);
@@ -24,6 +26,7 @@ namespace LBON.Extensions
         /// </summary>
         /// <param name="unixTime">This Unix Timestamp</param>
         /// <returns></returns>
+        [Description("将Unix时间戳转换为日期时间")]
         public static DateTime FromUnixTimestamp(this double unixTime)
         {
             var epoch = new DateTime(1970, 1, 1, 0, 0, 0, 0);
@@ -35,6 +38,7 @@ namespace LBON.Extensions
         /// </summary>
         /// <param name="target"></param>
         /// <returns></returns>
+        [Description("获取一天结束的值（23:59）")]
         public static DateTime ToDayEnd(this DateTime target)
         {
             return target.Date.AddDays(1).AddMilliseconds(-1);
@@ -46,6 +50,7 @@ namespace LBON.Extensions
         /// <param name="dt">this DateTime</param>
         /// <param name="startOfWeek">The Start Day of the Week (ie, Sunday/Monday)</param>
         /// <returns>The First Date of the week</returns>
+        [Description("获取指定日期的星期的第一个日期")]
         public static DateTime StartOfWeek(this DateTime dt, DayOfWeek startOfWeek)
         {
             var diff = dt.DayOfWeek - startOfWeek;
@@ -62,6 +67,7 @@ namespace LBON.Extensions
         /// <param name="year">The year.</param>
         /// <param name="month">The month.</param>
         /// <returns></returns>
+        [Description("获取一个月的所有日期")]
         public static IEnumerable<DateTime> DaysOfMonth(int year, int month)
         {
             return Enumerable.Range(0, DateTime.DaysInMonth(year, month))
@@ -73,6 +79,7 @@ namespace LBON.Extensions
         /// </summary>
         /// <returns></returns>
         /// <example>11/29/2011 would return 5, because it is the 5th Tuesday of each month</example>
+        [Description("获取当前日期在一个月的第几个星期")]
         public static int WeekDayInstanceOfMonth(this DateTime dateTime)
         {
             var y = 0;
@@ -88,6 +95,7 @@ namespace LBON.Extensions
         /// </summary>
         /// <param name="dateTime">The date time.</param>
         /// <returns></returns>
+        [Description("获取一个月内的总天数")]
         public static int TotalDaysInMonth(this DateTime dateTime)
         {
             return DaysOfMonth(dateTime.Year, dateTime.Month).Count();
@@ -98,6 +106,7 @@ namespace LBON.Extensions
         /// </summary>
         /// <param name="date"></param>
         /// <returns></returns>
+        [Description("获取Unspecified日期")]
         public static DateTime ToDateTimeUnspecified(this DateTime date)
         {
             if (date.Kind == DateTimeKind.Unspecified)
@@ -113,6 +122,7 @@ namespace LBON.Extensions
         /// </summary>
         /// <param name="date"></param>
         /// <returns></returns>
+        [Description("将日期时间缩短毫秒")]
         public static DateTime TrimMilliseconds(this DateTime date)
         {
             return new DateTime(date.Year, date.Month, date.Day, date.Hour, date.Minute, date.Second, date.Kind);
@@ -123,6 +133,7 @@ namespace LBON.Extensions
         /// </summary>
         /// <param name="dateTime">The date time.</param>
         /// <returns></returns>
+        [Description("清除时间")]
         public static DateTime ClearTime(this DateTime dateTime)
         {
             return dateTime.Subtract(

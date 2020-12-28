@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 
 namespace LBON.Extensions
@@ -13,6 +14,7 @@ namespace LBON.Extensions
         /// <summary>
         /// Checks whatever given collection object is null or has no item.
         /// </summary>
+        [Description("检查给定的集合对象是否为null或没有项目")]
         public static bool IsNullOrEmpty<T>([CanBeNull] this ICollection<T> source)
         {
             return source == null || source.Count <= 0;
@@ -25,6 +27,7 @@ namespace LBON.Extensions
         /// <param name="item">Item to check and add</param>
         /// <typeparam name="T">Type of the items in the collection</typeparam>
         /// <returns>Returns True if added, returns False if not.</returns>
+        [Description("项不在集合中则将其添加到集合中")]
         public static bool AddIfNotContains<T>([NotNull] this ICollection<T> source, T item)
         {
             if (source == null)
@@ -92,6 +95,7 @@ namespace LBON.Extensions
         /// <param name="source">The collection</param>
         /// <param name="predicate">The condition to remove the items</param>
         /// <returns>List of removed items</returns>
+        [Description("从集合中移除满足给定条件的所有项")]
         public static IList<T> RemoveAll<T>([NotNull] this ICollection<T> source, Func<T, bool> predicate)
         {
             var items = source.Where(predicate).ToList();

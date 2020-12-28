@@ -1,11 +1,11 @@
 # ObjectExtensions
-- <code>GetDisplayName</code>
-- <code>GetDescription</code>
-- <code>GetTypeDisplayOrDescription</code>
-- <code>IsRequired</code>
-- <code>GetAttribute</code>
-- <code>EnumToList</code>
-- <code>EnumToDictionary</code>
-- <code>As</code>
-- <code>To</code>
-- <code>IsIn</code>
+- <code>GetDisplayName</code> 获取DisplayName
+- <code>GetDescription</code> 获取Description
+- <code>GetTypeDisplayOrDescription</code> 获取Display或者Description
+- <code>IsRequired</code> 是否必填
+- <code>GetAttribute</code> 获取属性
+- <code>EnumToList</code> 枚举转换为集合
+- <code>EnumToDictionary</code> 枚举转换为字典
+- <code>As</code> 
+- <code>To</code> 
+- <code>IsIn</code> 

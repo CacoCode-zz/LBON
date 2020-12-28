@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.ComponentModel;
+using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -11,6 +12,7 @@ namespace LBON.Extensions
         /// </summary>
         /// <param name="stream">The stream.</param>
         /// <returns></returns>
+        [Description("获取字节数组")]
         public static byte[] GetAllBytes(this Stream stream)
         {
             using (var memoryStream = new MemoryStream())
@@ -43,6 +45,7 @@ namespace LBON.Extensions
         /// <param name="destination">The destination.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns></returns>
+        [Description("复制")]
         public static Task CopyToAsync(this Stream stream, Stream destination, CancellationToken cancellationToken)
         {
             stream.Position = 0;

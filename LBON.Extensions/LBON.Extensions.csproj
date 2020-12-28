@@ -5,7 +5,7 @@
     <Description>Lu Ban Of .Net - .Net 高可用、高效率的扩展组件</Description>
     <ReleaseVersion>0.0.1</ReleaseVersion>
     <SynchReleaseVersion>false</SynchReleaseVersion>
-    <Version>2.0.1.1</Version>
+    <Version>2.0.1.2</Version>
     <PackageIcon>logo.png</PackageIcon>
     <Copyright>CacoCode</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>

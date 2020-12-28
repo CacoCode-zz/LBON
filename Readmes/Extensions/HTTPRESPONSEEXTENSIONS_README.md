@@ -1,2 +1,2 @@
 # HttpResponseExtensions
-- <code>SetCookie</code>
+- <code>SetCookie</code> 设置请求头

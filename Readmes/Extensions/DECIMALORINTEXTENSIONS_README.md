@@ -1,11 +1,11 @@
 # DecimalOrIntExtensions
-- <code>ToChineseAmount</code>
-- <code>ToChineseAmount</code>
-- <code>IsBetween</code>
-- <code>IsBetween</code>
-- <code>IsBetween</code>
-- <code>IsBetween</code>
-- <code>IsBetween</code>
-- <code>IsBetween</code>
-- <code>IsBetween</code>
-- <code>IsBetween</code>
+- <code>ToChineseAmount</code> 换算成中文金额
+- <code>ToChineseAmount</code> 
+- <code>IsBetween</code> 判断值是否介于两者之间
+- <code>IsBetween</code> 
+- <code>IsBetween</code> 
+- <code>IsBetween</code> 
+- <code>IsBetween</code> 
+- <code>IsBetween</code> 
+- <code>IsBetween</code> 
+- <code>IsBetween</code> 

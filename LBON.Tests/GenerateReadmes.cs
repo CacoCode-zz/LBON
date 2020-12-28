@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -35,9 +36,9 @@ namespace LBON.Tests
                     foreach (var method in methods)
                     {
                         content += @$"
-- <code>{method.Name}</code>";
+- <code>{method.Name}</code> {method.GetCustomAttribute<DescriptionAttribute>()?.Description}";
                     }
-                    byte[] data = Encoding.ASCII.GetBytes(content);
+                    byte[] data = Encoding.UTF8.GetBytes(content);
                     fileStream.Write(data, 0, data.Length);
                 }
             }
@@ -63,7 +64,7 @@ namespace LBON.Tests
                         content += @$"
 - <code>{method.Name}</code>";
                     }
-                    byte[] data = Encoding.ASCII.GetBytes(content);
+                    byte[] data = Encoding.UTF8.GetBytes(content);
                     fileStream.Write(data, 0, data.Length);
                 }
             }

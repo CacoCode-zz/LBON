@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Xml;
@@ -15,6 +16,7 @@ namespace LBON.Extensions
         /// <typeparam name="T"></typeparam>
         /// <param name="xml">The XML.</param>
         /// <returns></returns>
+        [Description("将XML转换为Object")]
         public static object FromXml<T>(this string xml) where T : new()
         {
             using (var sr = new StringReader(xml))
@@ -30,6 +32,7 @@ namespace LBON.Extensions
         /// <typeparam name="T"></typeparam>
         /// <param name="xmlDocument">The XML document.</param>
         /// <returns></returns>
+        [Description("反序列化指定的XML文档")]
         public static T Deserialize<T>(this XDocument xmlDocument)
         {
             var xmlSerializer = new XmlSerializer(typeof(T));
@@ -43,6 +46,7 @@ namespace LBON.Extensions
         /// <param name="node">The Xml node</param>
         /// <param name="attributeName">Attribute name</param>
         /// <returns>Value of the attribute</returns>
+        [Description("从Xml节点获取属性的值")]
         public static string GetAttributeValueOrNull(this XmlNode node, string attributeName)
         {
             if (node.Attributes == null || node.Attributes.Count <= 0)

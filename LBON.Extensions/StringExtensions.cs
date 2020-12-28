@@ -20,6 +20,7 @@ namespace LBON.Extensions
         /// <param name="str">The string.</param>
         /// <returns>
         ///   <c>true</c> if [is null or white space] [the specified string]; otherwise, <c>false</c>.</returns>
+        [Description("检查是否为NULL或空格")]
         public static bool IsNullOrWhiteSpace(this string str)
         {
             return string.IsNullOrWhiteSpace(str);
@@ -29,6 +30,7 @@ namespace LBON.Extensions
         /// <param name="str">The string.</param>
         /// <returns>
         ///   <c>true</c> if [is null or empty] [the specified string]; otherwise, <c>false</c>.</returns>
+        [Description("检查是否为NULL或空")]
         public static bool IsNullOrEmpty(this string str)
         {
             return string.IsNullOrEmpty(str);
@@ -39,6 +41,7 @@ namespace LBON.Extensions
         /// <returns>
         ///   <br />
         /// </returns>
+        [Description("复制")]
         public static string Copy(this string str)
         {
             return string.Copy(str);
@@ -50,6 +53,7 @@ namespace LBON.Extensions
         /// <returns>
         ///   <br />
         /// </returns>
+        [Description("获取单个手机号")]
         public static string GetPhoneNumber(this string str, string pattern = RegexConst.PhoneNumber)
         {
             var reg = new Regex(pattern);
@@ -67,6 +71,7 @@ namespace LBON.Extensions
         /// <returns>
         ///   <br />
         /// </returns>
+        [Description("获取全部手机号")]
         public static List<string> GetPhoneNumbers(this string str, string pattern = RegexConst.PhoneNumber)
         {
             var reg = new Regex(pattern);
@@ -80,6 +85,7 @@ namespace LBON.Extensions
         /// <returns>
         ///   <br />
         /// </returns>
+        [Description("正则匹配单个")]
         public static string RegexMatch(this string str, string pattern)
         {
             var reg = new Regex(pattern);
@@ -97,6 +103,7 @@ namespace LBON.Extensions
         /// <returns>
         ///   <br />
         /// </returns>
+        [Description("正则匹配多个")]
         public static List<string> RegexMatches(this string str, string pattern)
         {
             var reg = new Regex(pattern);
@@ -109,6 +116,7 @@ namespace LBON.Extensions
         /// <returns>
         ///   <br />
         /// </returns>
+        [Description("String转换Int")]
         public static int ToInt(this string str)
         {
             return int.Parse(str);
@@ -119,6 +127,7 @@ namespace LBON.Extensions
         /// <returns>
         ///   <br />
         /// </returns>
+        [Description("String转换Decimal")]
         public static decimal ToDecimal(this string str)
         {
             return decimal.Parse(str);
@@ -128,6 +137,7 @@ namespace LBON.Extensions
         /// <param name="str">The string.</param>
         /// <returns>
         ///   <c>true</c> if the specified string is numeric; otherwise, <c>false</c>.</returns>
+        [Description("是否为数字")]
         public static bool IsNumeric(this string str)
         {
             var regex = new Regex(RegexConst.IsNumeric);
@@ -139,6 +149,7 @@ namespace LBON.Extensions
         /// <param name="value">The value.</param>
         /// <returns>
         ///   <c>true</c> if the specified value is contains; otherwise, <c>false</c>.</returns>
+        [Description("是否包含")]
         public static bool IsContains(this string str, string value)
         {
             return str.IndexOf(value, StringComparison.Ordinal) >= 0;
@@ -150,6 +161,7 @@ namespace LBON.Extensions
         /// <returns>
         ///   <br />
         /// </returns>
+        [Description("是否存在数组中")]
         public static bool In(this string str, params string[] stringValues)
         {
             foreach (string otherValue in stringValues)
@@ -165,6 +177,7 @@ namespace LBON.Extensions
         /// <returns>
         ///   <br />
         /// </returns>
+        [Description("格式化")]
         public static string Format(this string str, object arg0)
         {
             return string.Format(str, arg0);
@@ -190,6 +203,7 @@ namespace LBON.Extensions
         /// <exception cref="ArgumentException">An empty string value cannot be encrypted.
         /// or
         /// Cannot encrypt using an empty key. Please supply an encryption key.</exception>
+        [Description("RSA加密")]
         public static string Encrypt(this string str, string key)
         {
             if (string.IsNullOrEmpty(str))
@@ -215,6 +229,7 @@ namespace LBON.Extensions
         /// <exception cref="ArgumentException">An empty string value cannot be encrypted.
         /// or
         /// Cannot decrypt using an empty key. Please supply a decryption key.</exception>
+        [Description("RSA解密")]
         public static string Decrypt(this string str, string key)
         {
             string result = null;
@@ -240,6 +255,7 @@ namespace LBON.Extensions
         /// <returns>
         ///   <br />
         /// </returns>
+        [Description("首字母大写")]
         public static string FirstToUpper(this string str)
         {
             if (string.IsNullOrEmpty(str))
@@ -257,6 +273,7 @@ namespace LBON.Extensions
         /// <returns>
         ///   <br />
         /// </returns>
+        [Description("转换为安全字符串")]
         public static SecureString ToSecureString(this string str)
         {
             var secureString = new SecureString();
@@ -270,6 +287,7 @@ namespace LBON.Extensions
         /// <param name="str">The string.</param>
         /// <returns>
         ///   <c>true</c> if the specified string is date; otherwise, <c>false</c>.</returns>
+        [Description("转换为日期")]
         public static bool IsDate(this string str)
         {
             return !string.IsNullOrEmpty(str) && DateTime.TryParse(str, out _);
@@ -279,6 +297,7 @@ namespace LBON.Extensions
         /// <param name="str">The string.</param>
         /// <returns>
         ///   <c>true</c> if [is email address] [the specified string]; otherwise, <c>false</c>.</returns>
+        [Description("是否为邮箱地址")]
         public static bool IsEmailAddress(this string str)
         {
             var regex = new Regex(RegexConst.Email);
@@ -291,6 +310,7 @@ namespace LBON.Extensions
         /// <returns>
         ///   <br />
         /// </returns>
+        [Description("转换为任何格式")]
         public static T Parse<T>(this string str)
         {
             var result = default(T);
@@ -307,6 +327,7 @@ namespace LBON.Extensions
         /// <returns>
         ///   <c>true</c> if the specified string is unique identifier; otherwise, <c>false</c>.</returns>
         /// <exception cref="ArgumentNullException"></exception>
+        [Description("是否为Guid")]
         public static bool IsGuid(this string str)
         {
             if (str == null)
@@ -324,6 +345,7 @@ namespace LBON.Extensions
         /// <param name="str">The string.</param>
         /// <returns>
         ///   <c>true</c> if the specified string is URL; otherwise, <c>false</c>.</returns>
+        [Description("是否为地址")]
         public static bool IsUrl(this string str)
         {
             var regex = new Regex(RegexConst.Url);
@@ -338,6 +360,7 @@ namespace LBON.Extensions
         /// <returns>
         ///   <br />
         /// </returns>
+        [Description("屏蔽字符，如：123***789")]
         public static string Mask(this string str, int numExposed, char maskChar = '*', MaskTypeEnum type = MaskTypeEnum.All)
         {
             var maskedString = str;
@@ -368,6 +391,7 @@ namespace LBON.Extensions
         /// </summary>
         /// <param name="mobile">The mobile.</param>
         /// <returns></returns>
+        [Description("屏蔽手机号")]
         public static string MaskMobile(this string mobile)
         {
             if (!mobile.IsNullOrEmpty() && mobile.Length > 7)
@@ -384,6 +408,7 @@ namespace LBON.Extensions
         /// </summary>
         /// <param name="idCard">The identifier card.</param>
         /// <returns></returns>
+        [Description("屏蔽身份证")]
         public static string MaskIdCard(this string idCard)
         {
             if (!idCard.IsNullOrEmpty() && idCard.Length > 10)
@@ -400,6 +425,7 @@ namespace LBON.Extensions
         /// </summary>
         /// <param name="bankCard">The bank card.</param>
         /// <returns></returns>
+        [Description("屏蔽银行卡")]
         public static string MaskBankCard(this string bankCard)
         {
             if (!bankCard.IsNullOrEmpty() && bankCard.Length > 4)
@@ -417,6 +443,7 @@ namespace LBON.Extensions
         /// <returns>
         ///   <c>true</c> if [is length at least] [the specified length]; otherwise, <c>false</c>.</returns>
         /// <exception cref="ArgumentOutOfRangeException">length - The length must be a non-negative number.</exception>
+        [Description("判断是否为最后一位字符")]
         public static bool IsLengthAtLeast(this string str, int length)
         {
             if (length < 0)
@@ -432,6 +459,7 @@ namespace LBON.Extensions
         /// <param name="str">The string.</param>
         /// <returns>
         ///   <c>true</c> if [is strong password] [the specified string]; otherwise, <c>false</c>.</returns>
+        [Description("判断是否为强壮密码")]
         public static bool IsStrongPassword(this string str)
         {
             var isStrong = Regex.IsMatch(str, @"[\d]");
@@ -447,6 +475,7 @@ namespace LBON.Extensions
         /// <param name="pattern">The pattern.</param>
         /// <returns>
         ///   <c>true</c> if [is match regex] [the specified pattern]; otherwise, <c>false</c>.</returns>
+        [Description("是否正则匹配通过")]
         public static bool IsMatchRegex(this string str, string pattern)
         {
             var regex = new Regex(pattern);
@@ -459,6 +488,7 @@ namespace LBON.Extensions
         ///   <br />
         /// </returns>
         /// <exception cref="FileNotFoundException"></exception>
+        [Description("文件物理地址转换为字节数组")]
         public static byte[] ToBytes(this string fileName)
         {
             if (!File.Exists(fileName))
@@ -472,6 +502,7 @@ namespace LBON.Extensions
         /// <returns>
         ///   <br />
         /// </returns>
+        [Description("转换为Color")]
         public static Color ToColor(this string rgb)
         {
             rgb = rgb.Replace("#", "");
@@ -493,6 +524,7 @@ namespace LBON.Extensions
         /// <summary>
         /// Adds a char to end of given string if it does not ends with the char.
         /// </summary>
+        [Description("如果给定字符串不以[char]结尾，则在其结尾添加[char]")]
         public static string EnsureEndsWith(this string str, char c)
         {
             return EnsureEndsWith(str, c, StringComparison.Ordinal);
@@ -537,6 +569,7 @@ namespace LBON.Extensions
         /// <summary>
         /// Adds a char to beginning of given string if it does not starts with the char.
         /// </summary>
+        [Description("如果给定字符串不以[char]开头，则在其开头添加[char]")]
         public static string EnsureStartsWith(this string str, char c)
         {
             return EnsureStartsWith(str, c, StringComparison.Ordinal);
@@ -583,6 +616,7 @@ namespace LBON.Extensions
         /// </summary>
         /// <exception cref="ArgumentNullException">Thrown if <paramref name="str"/> is null</exception>
         /// <exception cref="ArgumentException">Thrown if <paramref name="len"/> is bigger that string's length</exception>
+        [Description("从字符串的开头获取指定长度字符串")]
         public static string Left(this string str, int len)
         {
             if (str == null)
@@ -601,6 +635,7 @@ namespace LBON.Extensions
         /// <summary>
         /// Converts line endings in the string to <see cref="Environment.NewLine"/>.
         /// </summary>
+        [Description("将字符串中的行尾转换为Environment.NewLine")]
         public static string NormalizeLineEndings(this string str)
         {
             return str.Replace("\r\n", "\n").Replace("\r", "\n").Replace("\n", Environment.NewLine);
@@ -612,6 +647,7 @@ namespace LBON.Extensions
         /// <param name="str">source string to be searched</param>
         /// <param name="c">Char to search in <paramref name="str"/></param>
         /// <param name="n">Count of the occurence</param>
+        [Description("获取字符串中第n个字符的索引")]
         public static int NthIndexOf(this string str, char c, int n)
         {
             if (str == null)
@@ -643,6 +679,7 @@ namespace LBON.Extensions
         /// <param name="str">The string.</param>
         /// <param name="postFixes">one or more postfix.</param>
         /// <returns>Modified string or the same string if it has not any of given postfixes</returns>
+        [Description("从给定字符串的末尾删除第一个出现的给定后缀")]
         public static string RemovePostFix(this string str, params string[] postFixes)
         {
             if (str == null)
@@ -678,6 +715,7 @@ namespace LBON.Extensions
         /// <param name="str">The string.</param>
         /// <param name="preFixes">one or more prefix.</param>
         /// <returns>Modified string or the same string if it has not any of given prefixes</returns>
+        [Description("从给定字符串的开头移除第一个出现的给定前缀")]
         public static string RemovePreFix(this string str, params string[] preFixes)
         {
             if (str == null)
@@ -711,6 +749,7 @@ namespace LBON.Extensions
         /// </summary>
         /// <exception cref="ArgumentNullException">Thrown if <paramref name="str"/> is null</exception>
         /// <exception cref="ArgumentException">Thrown if <paramref name="len"/> is bigger that string's length</exception>
+        [Description("从字符串的结尾获取指定长度字符串")]
         public static string Right(this string str, int len)
         {
             if (str == null)
@@ -729,6 +768,7 @@ namespace LBON.Extensions
         /// <summary>
         /// Uses string.Split method to split given string by given separator.
         /// </summary>
+        [Description("字符串拆分")]
         public static string[] Split(this string str, string separator)
         {
             return str.Split(new[] { separator }, StringSplitOptions.None);
@@ -745,6 +785,7 @@ namespace LBON.Extensions
         /// <summary>
         /// Uses string.Split method to split given string by <see cref="Environment.NewLine"/>.
         /// </summary>
+        [Description("字符串换行拆分")]
         public static string[] SplitToLines(this string str)
         {
             return str.Split(Environment.NewLine);
@@ -764,6 +805,7 @@ namespace LBON.Extensions
         /// <param name="str">String to convert</param>
         /// <param name="invariantCulture">Invariant culture</param>
         /// <returns>camelCase of the string</returns>
+        [Description("将PascalCase字符串转换为camelCase字符串")]
         public static string ToCamelCase(this string str, bool invariantCulture = true)
         {
             if (string.IsNullOrWhiteSpace(str))
@@ -806,6 +848,7 @@ namespace LBON.Extensions
         /// </summary>
         /// <param name="str">String to convert.</param>
         /// <param name="invariantCulture">Invariant culture</param>
+        [Description("将给定的PascalCase/camelCase字符串转换为句子（通过按空格拆分单词）")]
         public static string ToSentenceCase(this string str, bool invariantCulture = false)
         {
             if (string.IsNullOrWhiteSpace(str))
@@ -842,6 +885,7 @@ namespace LBON.Extensions
         /// <typeparam name="T">Type of enum</typeparam>
         /// <param name="value">String value to convert</param>
         /// <returns>Returns enum object</returns>
+        [Description("将字符串转换为枚举值")]
         public static T ToEnum<T>(this string value)
             where T : struct
         {
@@ -871,6 +915,12 @@ namespace LBON.Extensions
             return (T)Enum.Parse(typeof(T), value, ignoreCase);
         }
 
+        /// <summary>
+        /// Converts to md5.
+        /// </summary>
+        /// <param name="str">The string.</param>
+        /// <returns></returns>
+        [Description("将字符串转换为MD5")]
         public static string ToMd5(this string str)
         {
             using (var md5 = MD5.Create())
@@ -894,6 +944,7 @@ namespace LBON.Extensions
         /// <param name="str">String to convert</param>
         /// <param name="invariantCulture">Invariant culture</param>
         /// <returns>PascalCase of the string</returns>
+        [Description("将camelCase字符串转换为pascalase字符串")]
         public static string ToPascalCase(this string str, bool invariantCulture = true)
         {
             if (string.IsNullOrWhiteSpace(str))
@@ -934,6 +985,7 @@ namespace LBON.Extensions
         /// Gets a substring of a string from beginning of the string if it exceeds maximum length.
         /// </summary>
         /// <exception cref="ArgumentNullException">Thrown if <paramref name="str"/> is null</exception>
+        [Description("如果指定长度超过最大长度，则从该字符串的开头获取指定长度的字符")]
         public static string Truncate(this string str, int maxLength)
         {
             if (str == null)
@@ -996,6 +1048,7 @@ namespace LBON.Extensions
         /// </summary>
         /// <param name="filePath"></param>
         /// <returns></returns>
+        [Description("通过文件物理路径获取文件文本")]
         public static string ReadFile(this string filePath)
         {
             string context = string.Empty;
@@ -1019,6 +1072,7 @@ namespace LBON.Extensions
         /// <param name="intStr"></param>
         /// <param name="sort"></param>
         /// <returns></returns>
+        [Description("验证文本数字，如'1,2,3'；是否按指定排序")]
         public static bool VerifySort(this string intStr, SortEnum sort = SortEnum.Asc)
         {
             var list = intStr.Split(",")

@@ -1,5 +1,5 @@
 # EnumerableExtensions
-- <code>JoinAsString</code>
-- <code>JoinAsString</code>
-- <code>WhereIf</code>
-- <code>WhereIf</code>
+- <code>JoinAsString</code> Enumerable转换String
+- <code>JoinAsString</code> 
+- <code>WhereIf</code> Enumerable筛选
+- <code>WhereIf</code> 

@@ -2,6 +2,7 @@
 using System.IO;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.ComponentModel;
 
 namespace LBON.Extensions
 {
@@ -13,6 +14,7 @@ namespace LBON.Extensions
         /// <param name="image"></param>
         /// <param name="format"></param>
         /// <returns></returns>
+        [Description("将图像转换为base64")]
         public static string ToBase64(this Image image, ImageFormat format)
         {
             using (var ms = new MemoryStream())
@@ -33,6 +35,7 @@ namespace LBON.Extensions
         /// <param name="height"></param>
         /// <param name="width"></param>
         /// <returns></returns>
+        [Description("缩放图像以使其适合高度/宽度")]
         public static Image ScaleImage(this Image image, int height, int width)
         {
             if (image == null || height <= 0 || width <= 0)
@@ -75,6 +78,7 @@ namespace LBON.Extensions
         /// <param name="image"></param>
         /// <param name="format"></param>
         /// <returns></returns>
+        [Description("将图像转换为字节数组")]
         public static byte[] ToBytes(this Image image, ImageFormat format)
         {
             if (image == null)
@@ -94,6 +98,7 @@ namespace LBON.Extensions
         /// </summary>
         /// <param name="bytes"></param>
         /// <returns></returns>
+        [Description("将字节数组转换为图像")]
         public static Image ToImage(this byte[] bytes)
         {
             if (bytes == null)
@@ -111,6 +116,7 @@ namespace LBON.Extensions
         /// <param name="image"></param>
         /// <param name="s"></param>
         /// <returns></returns>
+        [Description("将图像转换为ICO流")]
         public static MemoryStream ToIcoStream(Image image, Size s)
         {
             using (Bitmap bmp = new Bitmap(image, s))

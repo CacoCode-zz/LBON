@@ -1,2 +1,17 @@
 # ListExtensions
-- <code>SortByDependencies</code>
+- <code>InsertRange</code> 插入多个
+- <code>FindIndex</code> 查找索引
+- <code>AddFirst</code> 在开头插入
+- <code>AddLast</code> 在结尾插入
+- <code>InsertAfter</code> 在...之后插入
+- <code>InsertAfter</code> 
+- <code>InsertBefore</code> 在...之前插入
+- <code>InsertBefore</code> 
+- <code>ReplaceWhile</code> 替换
+- <code>ReplaceWhile</code> 
+- <code>ReplaceOne</code> 替换
+- <code>ReplaceOne</code> 
+- <code>ReplaceOne</code> 
+- <code>MoveItem</code> 移动项
+- <code>GetOrAdd</code> 获取并添加
+- <code>SortByDependencies</code> 通过topological排序对列表进行排序，topological排序考虑了它们之间的依赖关系

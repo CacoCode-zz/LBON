@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,7 @@ namespace LBON.Extensions
         /// <returns>
         ///   <br />
         /// </returns>
+        [Description("转换为列表")]
         public static IList<T> ToList<T>(this DataTable dt) where T : class
         {
             IList<T> list = new List<T>();
@@ -46,6 +48,7 @@ namespace LBON.Extensions
         /// <returns>
         ///   <br />
         /// </returns>
+        [Description("转换为DataTable")]
         public static DataTable ToDataTable<T>(this ICollection<T> source)
         {
             var props = typeof(T).GetProperties();
@@ -73,6 +76,7 @@ namespace LBON.Extensions
         /// <returns>
         ///   <br />
         /// </returns>
+        [Description("转换为Xml")]
         public static XDocument ToXml(this DataTable dt, string rootName)
         {
             var xdoc = new XDocument
@@ -99,6 +103,7 @@ namespace LBON.Extensions
         /// <param name="sourceTable">Input DataTable</param>
         /// <param name="fieldName">Field to select (distinct)</param>
         /// <returns></returns>
+        [Description("在DataTable中'SELECT DISTINCT'")]
         public static DataTable SelectDistinct(this DataTable sourceTable, string fieldName)
         {
             return SelectDistinct(sourceTable, fieldName, string.Empty);
@@ -144,6 +149,7 @@ namespace LBON.Extensions
         /// <returns>
         ///   <br />
         /// </returns>
+        [Description("查询全部行")]
         public static DataTable SelectRows(this DataTable dt, string whereExpression, string orderByExpression)
         {
             dt.DefaultView.RowFilter = whereExpression;
@@ -157,6 +163,7 @@ namespace LBON.Extensions
         /// <returns>
         ///   <br />
         /// </returns>
+        [Description("删除重复的行")]
         public static DataTable Duplicate(this DataTable dt, string keyColName)
         {
             var tblOut = dt.Clone();
@@ -184,6 +191,7 @@ namespace LBON.Extensions
         /// <returns>
         ///   <br />
         /// </returns>
+        [Description("检查两个DataTable对象是否具有相同的内容")]
         public static bool EqualsByContent(this DataTable thisDataTable, DataTable otherDataTable)
         {
             // Compare row count.
@@ -218,6 +226,7 @@ namespace LBON.Extensions
         /// <param name="dt">The dt.</param>
         /// <param name="oldName">The old name.</param>
         /// <param name="newName">The new name.</param>
+        [Description("重命名列")]
         public static void RenameColumn(this DataTable dt, string oldName, string newName)
         {
             if (dt != null && !string.IsNullOrEmpty(oldName) && !string.IsNullOrEmpty(newName) && oldName != newName)
@@ -231,6 +240,7 @@ namespace LBON.Extensions
         /// <summary>Removes the column.</summary>
         /// <param name="dt">The dt.</param>
         /// <param name="columnName">Name of the column.</param>
+        [Description("删除列")]
         public static void RemoveColumn(this DataTable dt, string columnName)
         {
             if (dt != null && !string.IsNullOrEmpty(columnName) && dt.Columns.IndexOf(columnName) >= 0)

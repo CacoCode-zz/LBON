@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace LBON.Extensions
 {
@@ -37,6 +38,7 @@ namespace LBON.Extensions
         /// <typeparam name="TKey">Type of the key</typeparam>
         /// <typeparam name="TValue">Type of the value</typeparam>
         /// <returns>Value if found, default if can not found.</returns>
+        [Description("从字典中获取具有给定键的值，如果找不到，则返回默认值")]
         public static TValue GetOrDefault<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key)
         {
             TValue obj;
@@ -44,7 +46,7 @@ namespace LBON.Extensions
         }
 
         /// <summary>
-        /// Gets a value from the dictionary with given key. Returns default value if can not find.
+        /// Gets a value from the dictionary with given key. Add value if can not find.
         /// </summary>
         /// <param name="dictionary">Dictionary to check and get</param>
         /// <param name="key">Key to find the value</param>
@@ -52,6 +54,7 @@ namespace LBON.Extensions
         /// <typeparam name="TKey">Type of the key</typeparam>
         /// <typeparam name="TValue">Type of the value</typeparam>
         /// <returns>Value if found, default if can not found.</returns>
+        [Description("从字典中获取具有给定键的值，如果找不到，则添加")]
         public static TValue GetOrAdd<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key, Func<TKey, TValue> factory)
         {
             TValue obj;
@@ -62,9 +65,9 @@ namespace LBON.Extensions
 
             return dictionary[key] = factory(key);
         }
-        
+
         /// <summary>
-        /// Gets a value from the dictionary with given key. Returns default value if can not find.
+        /// Gets a value from the dictionary with given key. Add value if can not find.
         /// </summary>
         /// <param name="dictionary">Dictionary to check and get</param>
         /// <param name="key">Key to find the value</param>

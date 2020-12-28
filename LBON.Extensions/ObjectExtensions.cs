@@ -18,6 +18,7 @@ namespace LBON.Extensions
         /// <returns>
         ///   <br />
         /// </returns>
+        [Description("获取DisplayName")]
         public static string GetDisplayName(this ICustomAttributeProvider customAttributeProvider)
         {
             var displayAttribute = customAttributeProvider.GetAttribute<DisplayAttribute>();
@@ -30,6 +31,7 @@ namespace LBON.Extensions
         /// <returns>
         ///   <br />
         /// </returns>
+        [Description("获取Description")]
         public static string GetDescription(this ICustomAttributeProvider customAttributeProvider)
         {
             var des = string.Empty;
@@ -43,6 +45,7 @@ namespace LBON.Extensions
         /// <returns>
         ///   <br />
         /// </returns>
+        [Description("获取Display或者Description")]
         public static string GetTypeDisplayOrDescription(this ICustomAttributeProvider customAttributeProvider)
         {
             var description = customAttributeProvider.GetDescription();
@@ -54,6 +57,7 @@ namespace LBON.Extensions
         /// <param name="propertyInfo">The property information.</param>
         /// <returns>
         ///   <c>true</c> if the specified property information is required; otherwise, <c>false</c>.</returns>
+        [Description("是否必填")]
         public static bool IsRequired(this PropertyInfo propertyInfo)
         {
             if (propertyInfo.GetAttribute<RequiredAttribute>(true) != null) return true;
@@ -75,6 +79,7 @@ namespace LBON.Extensions
         /// <returns>
         ///   <br />
         /// </returns>
+        [Description("获取属性")]
         public static T GetAttribute<T>(this ICustomAttributeProvider assembly, bool inherit = false)
             where T : Attribute
         {
@@ -90,6 +95,7 @@ namespace LBON.Extensions
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
         /// <exception cref="ArgumentException">T must be of type System.Enum</exception>
+        [Description("枚举转换为集合")]
         public static List<T> EnumToList<T>()
         {
             var enumType = typeof(T);
@@ -111,6 +117,7 @@ namespace LBON.Extensions
         /// <returns></returns>
         /// <exception cref="NullReferenceException"></exception>
         /// <exception cref="InvalidCastException">object is not an Enumeration</exception>
+        [Description("枚举转换为字典")]
         public static IDictionary<string, int> EnumToDictionary(this Type t)
         {
             if (t == null) throw new NullReferenceException();

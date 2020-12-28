@@ -1,11 +1,11 @@
 # DataTableExtensions
-- <code>ToList</code>
-- <code>ToDataTable</code>
-- <code>ToXml</code>
-- <code>SelectDistinct</code>
-- <code>SelectDistinct</code>
-- <code>SelectRows</code>
-- <code>Duplicate</code>
-- <code>EqualsByContent</code>
-- <code>RenameColumn</code>
-- <code>RemoveColumn</code>
+- <code>ToList</code> 转换为列表
+- <code>ToDataTable</code> 转换为DataTable
+- <code>ToXml</code> 转换为Xml
+- <code>SelectDistinct</code> 在DataTable中'SELECT DISTINCT'
+- <code>SelectDistinct</code> 
+- <code>SelectRows</code> 查询全部行
+- <code>Duplicate</code> 删除重复的行
+- <code>EqualsByContent</code> 检查两个DataTable对象是否具有相同的内容
+- <code>RenameColumn</code> 重命名列
+- <code>RemoveColumn</code> 删除列

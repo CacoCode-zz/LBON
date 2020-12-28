@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel;
 using System.Runtime.ExceptionServices;
 
 namespace LBON.Extensions
@@ -13,6 +14,7 @@ namespace LBON.Extensions
         /// while preserving stack trace.
         /// </summary>
         /// <param name="exception">Exception to be re-thrown</param>
+        [Description("重新引发异常")]
         public static void ReThrow(this Exception exception)
         {
             ExceptionDispatchInfo.Capture(exception).Throw();
