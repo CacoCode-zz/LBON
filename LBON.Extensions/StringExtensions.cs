@@ -200,8 +200,8 @@ namespace LBON.Extensions
             {
                 throw new ArgumentException("Cannot encrypt using an empty key. Please supply an encryption key.");
             }
-            var cspParameters = new CspParameters {KeyContainerName = key};
-            var rsa = new RSACryptoServiceProvider(cspParameters) {PersistKeyInCsp = true};
+            var cspParameters = new CspParameters { KeyContainerName = key };
+            var rsa = new RSACryptoServiceProvider(cspParameters) { PersistKeyInCsp = true };
             var bytes = rsa.Encrypt(Encoding.UTF8.GetBytes(str), true);
             return BitConverter.ToString(bytes);
         }
@@ -226,8 +226,8 @@ namespace LBON.Extensions
             {
                 throw new ArgumentException("Cannot decrypt using an empty key. Please supply a decryption key.");
             }
-            var cspParameters = new CspParameters {KeyContainerName = key};
-            var rsa = new RSACryptoServiceProvider(cspParameters) {PersistKeyInCsp = true};
+            var cspParameters = new CspParameters { KeyContainerName = key };
+            var rsa = new RSACryptoServiceProvider(cspParameters) { PersistKeyInCsp = true };
             var decryptArray = str.Split(new string[] { "-" }, StringSplitOptions.None);
             var decryptByteArray = Array.ConvertAll<string, byte>(decryptArray, (s => Convert.ToByte(byte.Parse(s, System.Globalization.NumberStyles.HexNumber))));
             var bytes = rsa.Decrypt(decryptByteArray, true);
@@ -1011,6 +1011,34 @@ namespace LBON.Extensions
                 }
             }
             return context;
+        }
+
+        /// <summary>
+        /// Verify number sort
+        /// </summary>
+        /// <param name="intStr"></param>
+        /// <param name="sort"></param>
+        /// <returns></returns>
+        public static bool VerifySort(this string intStr, SortEnum sort = SortEnum.Asc)
+        {
+            var list = intStr.Split(",")
+                .Select(int.Parse)
+                .ToList();
+            switch (sort)
+            {
+                case SortEnum.Asc:
+                    list = list.OrderBy(a => a)
+                    .ToList();
+                    break;
+                case SortEnum.Desc:
+                    list = list.OrderByDescending(a => a)
+                        .ToList();
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(sort), sort, null);
+            }
+                
+            return string.Join(",", list) == intStr;
         }
 
         private static void CreateAlphaNumMask(StringBuilder buffer, string source, char mask, int length)
