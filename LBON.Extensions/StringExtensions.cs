@@ -800,6 +800,17 @@ namespace LBON.Extensions
         }
 
         /// <summary>
+        /// Uses string.Split method to split given string by separator.
+        /// </summary>
+        /// <param name="str">The string.</param>
+        /// <param name="separator">The separator.</param>
+        /// <returns></returns>
+        public static string[] SplitToLines(this string str, string separator)
+        {
+            return str.Split(separator);
+        }
+
+        /// <summary>
         /// Converts PascalCase string to camelCase string.
         /// </summary>
         /// <param name="str">String to convert</param>
