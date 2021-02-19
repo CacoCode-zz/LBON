@@ -2,6 +2,9 @@
 
 <p align="center"> 
     <a href="https://github.com/CacoCode/LBON/actions?query=workflow%3ALBON_MASTER+branch%3Amaster"><img src="https://github.com/CacoCode/LBON/workflows/LBON_MASTER/badge.svg?branch=master" alt="Github Build Status"></a>
+    <a href="https://www.nuget.org/packages/LBON.Extensions"><img src="https://img.shields.io/nuget/v/LBON.Extensions.svg?style=flat-square" alt="nuget"></a>
+    <a href="https://www.nuget.org/stats/packages/LBON.Extensions?groupby=Version"><img src="https://img.shields.io/nuget/dt/LBON.Extensions.svg?style=flat-square" alt="downloads"></a>
+    <a href="https://github.com/CacoCode/LBON/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
 </p>
 
 # Lu Ban Of .Net - .NET 鲁班工匠辅助库
