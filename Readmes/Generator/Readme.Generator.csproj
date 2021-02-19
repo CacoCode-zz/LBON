@@ -6,9 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="LBON.Consts" Version="2.0.1.2" />
-    <PackageReference Include="LBON.Extensions" Version="2.0.1.2" />
-    <PackageReference Include="LBON.Helper" Version="2.0.1.2" />
+    <PackageReference Include="LBON.Consts" Version="2.0.1.3" />
+    <PackageReference Include="LBON.Extensions" Version="2.0.1.3" />
+    <PackageReference Include="LBON.Helper" Version="2.0.1.3" />
   </ItemGroup>
 
 </Project>

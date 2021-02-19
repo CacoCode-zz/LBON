@@ -33,6 +33,10 @@ namespace Readme.Generator
                 using (var fileStream = new FileStream(filePath, FileMode.CreateNew))
                 {
                     string content = $"# {item.Name}";
+                    if (item.Name == "StringExtensions")
+                    {
+
+                    }
                     var methods = item.GetMethods().Where(a => a.IsPublic && a.IsStatic).ToList();
                     foreach (var method in methods)
                     {
