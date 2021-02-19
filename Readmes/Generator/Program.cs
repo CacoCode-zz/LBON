@@ -29,7 +29,7 @@ namespace Readme.Generator
             foreach (var item in classes)
             {
                 //var dirPath = "E:\\Codes\\LBON\\Readmes\\Extensions";
-                var dirPath = $"Readmes\\{args[0]}";
+                var dirPath = Path.Combine("Readmes", args[0]);
                 var filePath = Path.Combine(dirPath, $"{item.Name.ToUpper()}_README.md");
                 if (File.Exists(filePath))
                 {
@@ -61,7 +61,7 @@ namespace Readme.Generator
             foreach (var item in classes)
             {
                 //var dirPath = "E:\\Codes\\LBON\\Readmes\\Helper";
-                var dirPath = $"Readmes\\{args[1]}";
+                var dirPath = Path.Combine("Readmes", args[1]);
                 var filePath = Path.Combine(dirPath, $"{item.Name.ToUpper()}_README.md");
                 if (File.Exists(filePath))
                 {
