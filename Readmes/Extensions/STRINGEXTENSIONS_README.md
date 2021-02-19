@@ -47,6 +47,7 @@
 - <code>Split</code> 
 - <code>SplitToLines</code> 字符串换行拆分
 - <code>SplitToLines</code> 
+- <code>SplitToLines</code> 
 - <code>ToCamelCase</code> 将PascalCase字符串转换为camelCase字符串
 - <code>ToCamelCase</code> 
 - <code>ToSentenceCase</code> 将给定的PascalCase/camelCase字符串转换为句子（通过按空格拆分单词）

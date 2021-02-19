@@ -11,20 +11,25 @@ namespace Readme.Generator
     {
         static void Main(string[] args)
         {
+            if (args.Length != 2)
+            {
+                throw new ArgumentException();
+            }
             Console.WriteLine("========================Generate Extensions Readmes Start========================");
-            GenerateExtensionsReadmes();
+            GenerateExtensionsReadmes(args);
             Console.WriteLine("========================Generate Extensions Readmes End========================");
             Console.WriteLine("========================Generate Heleper Readmes Start========================");
-            GenerateHeleperReadmes();
+            GenerateHeleperReadmes(args);
             Console.WriteLine("========================Generate Heleper Readmes End========================");
         }
 
-        private static void GenerateExtensionsReadmes()
+        private static void GenerateExtensionsReadmes(string[] args)
         {
             var classes = Assembly.Load("LBON.Extensions").GetTypes().Where(a => a.Name.EndsWith("Extensions")).ToList();
             foreach (var item in classes)
             {
-                var dirPath = "E:\\Codes\\LBON\\Readmes\\Extensions";
+                //var dirPath = "E:\\Codes\\LBON\\Readmes\\Extensions";
+                var dirPath = $"Readmes\\{args[0]}";
                 var filePath = Path.Combine(dirPath, $"{item.Name.ToUpper()}_README.md");
                 if (File.Exists(filePath))
                 {
@@ -50,12 +55,13 @@ namespace Readme.Generator
             }
         }
 
-        private static void GenerateHeleperReadmes()
+        private static void GenerateHeleperReadmes(string[] args)
         {
             var classes = Assembly.Load("LBON.Helper").GetTypes().Where(a => a.Name.EndsWith("Helper")).ToList();
             foreach (var item in classes)
             {
-                var dirPath = "E:\\Codes\\LBON\\Readmes\\Helper";
+                //var dirPath = "E:\\Codes\\LBON\\Readmes\\Helper";
+                var dirPath = $"Readmes\\{args[1]}";
                 var filePath = Path.Combine(dirPath, $"{item.Name.ToUpper()}_README.md");
                 if (File.Exists(filePath))
                 {
