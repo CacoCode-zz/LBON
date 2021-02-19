@@ -25,4 +25,4 @@ jobs:
     - name: Test
       run: dotnet test --no-restore --verbosity normal
     - name: Readme
-      run: dotnet run --project ./Readmes/Generator/Readme.Generator.csproj
+      run: dotnet run --project Readmes/Generator/Readme.Generator.csproj
