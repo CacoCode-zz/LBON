@@ -17,6 +17,8 @@
 | **LBON.Consts** | **[![NuGet](https://buildstats.info/nuget/LBON.Consts)](https://www.nuget.org/packages/LBON.Consts)** |
 | **LBON.Extensions** | **[![NuGet](https://buildstats.info/nuget/LBON.Extensions)](https://www.nuget.org/packages/LBON.Extensions)** |
 | **LBON.Helper** | **[![NuGet](https://buildstats.info/nuget/LBON.Helper)](https://www.nuget.org/packages/LBON.Helper)** |
+| **LBON.DependencyInjection** | **[![NuGet](https://buildstats.info/nuget/LBON.DependencyInjection)](https://www.nuget.org/packages/LBON.DependencyInjection)** |
+| **LBON.EntityFrameworkCore** | **[![NuGet](https://buildstats.info/nuget/LBON.EntityFrameworkCore)](https://www.nuget.org/packages/LBON.EntityFrameworkCore)** |
 
 # 功能模块
 ## Extensions
