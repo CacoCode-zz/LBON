@@ -21,6 +21,9 @@
 | **LBON.EntityFrameworkCore** | **[![NuGet](https://buildstats.info/nuget/LBON.EntityFrameworkCore)](https://www.nuget.org/packages/LBON.EntityFrameworkCore)** |
 
 # 功能模块
+## EntityFrameworkCore
+此项目为EntityFramework 底层实现和扩展类，包括创建审计字段、修改审计字段、删除审计字段和扩展字段的封装
+
 ## Extensions
 - ### [CollectionExtensions](Readmes/Extensions/COLLECTIONEXTENSIONS_README.md)
 - ### [ComparableExtensions](Readmes/Extensions/COMPARABLEEXTENSIONS_README.md)
