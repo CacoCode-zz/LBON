@@ -21,8 +21,8 @@
 | **LBON.EntityFrameworkCore** | **[![NuGet](https://buildstats.info/nuget/LBON.EntityFrameworkCore)](https://www.nuget.org/packages/LBON.EntityFrameworkCore)** |
 
 # 功能模块
-## EntityFrameworkCore
-此项目为EntityFramework 底层实现和扩展类，包括创建审计字段、修改审计字段、删除审计字段和扩展字段的封装
+## LBON.EntityFrameworkCore
+EntityFramework 底层实现和扩展类，包括创建审计字段、修改审计字段、删除审计字段和扩展字段的封装
 
 ```Csharp
     public class FullAuditedEntity<TKey,TUser>:EntityBase<TKey>, ICreationAudited<TUser>, IModificationAudited<TUser>, IDeletionAudited<TUser>
@@ -108,7 +108,7 @@ public interface IProductService: ITransientDependency
 {
 }
 ```
-## Extensions
+## LBON.Extensions
 - ### [CollectionExtensions](Readmes/Extensions/COLLECTIONEXTENSIONS_README.md)
 - ### [ComparableExtensions](Readmes/Extensions/COMPARABLEEXTENSIONS_README.md)
 - ### [DataTableExtensions](Readmes/Extensions/DATATABLEEXTENSIONS_README.md)
@@ -128,12 +128,12 @@ public interface IProductService: ITransientDependency
 - ### [StreamExtensions](Readmes/Extensions/STREAMEXTENSIONS_README.md)
 - ### [StringExtensions](Readmes/Extensions/STRINGEXTENSIONS_README.md)
 - ### [XmlExtensions](Readmes/Extensions/XMLEXTENSIONS_README.md)
-## Helper
+## LBON.Helper
 - ### [DirectoryHelper](Readmes/Helper/DIRECTORYHELPER_README.md)
 - ### [FileHelper](Readmes/Helper/FILEHELPER_README.md)
 - ### [RandomHelper](Readmes/Helper/RANDOMHELPER_README.md)
 - ### [Utf8Helper](Readmes/Helper/UTF8HELPER_README.md)
-## Consts
+## LBON.Consts
 - ### [MediaType](LBON.Consts/MediaTypeConst.cs)
 - ### [Regex](LBON.Consts/RegexConst.cs)
 
