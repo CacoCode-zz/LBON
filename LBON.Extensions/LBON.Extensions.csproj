@@ -5,7 +5,7 @@
     <Description>Lu Ban Of .Net - .Net 高可用、高效率的扩展组件</Description>
     <ReleaseVersion>0.0.1</ReleaseVersion>
     <SynchReleaseVersion>false</SynchReleaseVersion>
-    <Version>2.0.1.3</Version>
+    <Version>2.0.1.4</Version>
     <PackageIcon>logo.png</PackageIcon>
     <Copyright>CacoCode</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
@@ -18,7 +18,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Commons\**" />
+    <EmbeddedResource Remove="Commons\**" />
+    <None Remove="Commons\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="JetBrains.Annotations" Version="2020.3.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
     <PackageReference Include="System.Drawing.Common" Version="5.0.0" />
   </ItemGroup>
@@ -36,10 +43,6 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Commons\" />
   </ItemGroup>
 
 </Project>

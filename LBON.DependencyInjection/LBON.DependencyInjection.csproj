@@ -1,9 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <Description>Lu Ban Of .Net - .Net 高可用、高效率的扩展组件</Description>
-    <ReleaseVersion>0.0.1</ReleaseVersion>
+    <ReleaseVersion>2.0.1.4</ReleaseVersion>
     <SynchReleaseVersion>false</SynchReleaseVersion>
     <Version>2.0.1.4</Version>
     <Copyright>CacoCode</Copyright>
@@ -11,20 +11,28 @@
     <PackageProjectUrl>https://github.com/CacoCode/LBON</PackageProjectUrl>
     <PackageIcon>logo.png</PackageIcon>
     <RepositoryUrl>https://github.com/CacoCode/LBON</RepositoryUrl>
-    <PackageTags>Consts</PackageTags>
+    <PackageTags>LBON.DependencyInjection</PackageTags>
     <Authors>CacoCode</Authors>
     <Company>CacoCode</Company>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\logo.png">
-      <Pack>True</Pack>
+    <None Include="..\LICENSE" Link="LICENSE">
       <PackagePath></PackagePath>
-    </None>
-    <None Include="..\LICENSE">
       <Pack>True</Pack>
-      <PackagePath></PackagePath>
     </None>
+    <None Include="..\logo.png" Link="logo.png">
+      <PackagePath></PackagePath>
+      <Pack>True</Pack>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LBON.EntityFrameworkCore\LBON.EntityFrameworkCore.csproj" />
   </ItemGroup>
 
 </Project>
