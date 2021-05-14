@@ -87,6 +87,27 @@
 
         Task HardDeleteAsync(TEntity entity, bool autoSave = true);
 ```
+在.NET CORE 中使用的话，可以引入**LBON.EntityFrameworkCore**库，里面封装了对IEfRepository的以来注入，并且实现了对**IScopedDependency、ISingletonDependency、ITransientDependency**继承类的自动批量注入，方便使用者注入自身服务。
+```Csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services.ServiceRegister(Assembly.Load("AssemblyName"), Assembly.Load("AssemblyName"));
+}
+```
+```Csharp
+// Scoped
+public interface IProductService: IScopedDependency
+{
+}
+// Singleton
+public interface IProductService: ISingletonDependency
+{
+}
+// Transient
+public interface IProductService: ITransientDependency
+{
+}
+```
 ## Extensions
 - ### [CollectionExtensions](Readmes/Extensions/COLLECTIONEXTENSIONS_README.md)
 - ### [ComparableExtensions](Readmes/Extensions/COMPARABLEEXTENSIONS_README.md)
