@@ -8,7 +8,7 @@
 </p>
 <p align="center"> 
     中文|
-    <a href="README.md">英文</a>
+    <a href="README.en.md">English</a>
 </p>
 
 # Lu Ban Of .Net - .NET 鲁班工匠辅助库
