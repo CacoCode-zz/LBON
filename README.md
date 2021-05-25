@@ -6,6 +6,10 @@
     <a href="https://www.nuget.org/stats/packages/LBON.Extensions?groupby=Version"><img src="https://img.shields.io/nuget/dt/LBON.Extensions.svg?style=flat-square" alt="downloads"></a>
     <a href="https://github.com/CacoCode/LBON/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
 </p>
+<p align="center"> 
+    中文|
+    <a href="README.md">英文</a>
+</p>
 
 # Lu Ban Of .Net - .NET 鲁班工匠辅助库
 .Net 高可用、高效率的扩展库，希望对 .NET 开发者及爱好者带来便捷，告别996，远离ICU！！！
