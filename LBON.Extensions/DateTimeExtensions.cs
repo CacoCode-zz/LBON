@@ -102,6 +102,28 @@ namespace LBON.Extensions
         }
 
         /// <summary>
+        /// Get the first day in a month
+        /// </summary>
+        /// <param name="dateTime">The date time.</param>
+        /// <returns></returns>
+        [Description("获取一个月内的第一天")]
+        public static DateTime FirstInMonth(this DateTime dateTime)
+        {
+            return DateTime.Now.AddDays(1 - DateTime.Now.Day);
+        }
+
+        /// <summary>
+        /// Get the Last Day in a Month 23:59:59
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <returns></returns>
+        [Description("获取一个月内的最后一天 23:59:59")]
+        public static DateTime LastInMonth(this DateTime dateTime)
+        {
+            return DateTime.Now.AddDays(1 - DateTime.Now.Day).Date.AddMonths(1).AddSeconds(-1);
+        }
+
+        /// <summary>
         /// Takes any date and returns it's value as an Unspecified DateTime
         /// </summary>
         /// <param name="date"></param>

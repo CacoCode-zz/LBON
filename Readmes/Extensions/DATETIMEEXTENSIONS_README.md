@@ -6,6 +6,8 @@
 - <code>DaysOfMonth</code> 获取一个月的所有日期
 - <code>WeekDayInstanceOfMonth</code> 获取当前日期在一个月的第几个星期
 - <code>TotalDaysInMonth</code> 获取一个月内的总天数
+- <code>FirstInMonth</code> 获取一个月内的第一天
+- <code>LastInMonth</code> 获取一个月内的最后一天 23:59:59
 - <code>ToDateTimeUnspecified</code> 获取Unspecified日期
 - <code>TrimMilliseconds</code> 将日期时间缩短毫秒
 - <code>ClearTime</code> 清除时间
