@@ -1,4 +1,4 @@
-<p align="center"><img align="center" src="https://github.com/CacoCode/LBON/blob/master/logo.png"></p>
+<p align="center"><img align="center" src="logo.png"></p>
 
 <p align="center"> 
     <a href="https://github.com/CacoCode/LBON/actions?query=workflow%3ALBON_MASTER+branch%3Amaster"><img src="https://github.com/CacoCode/LBON/workflows/LBON_MASTER/badge.svg?branch=master" alt="Github Build Status"></a>
