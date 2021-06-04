@@ -7,16 +7,16 @@
     <a href="https://github.com/CacoCode/LBON/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
 </p>
 <p align="center"> 
-    中文|
-    <a href="README.en.md">English</a>
+    <a href="README.md">中文</a>|
+    English
 </p>
 
-# Lu Ban Of .Net - .NET 鲁班工匠辅助库
-.Net 高可用、高效率的扩展库，希望对 .NET 开发者及爱好者带来便捷，告别996，远离ICU！！！
+# Lu Ban Of .Net - .NET Luban Craftsman Auxiliary Library
+. Net 's high available, efficient expansion library hopes to bring convenience to .NET developers and enthusiasts, farewell to 996 and away from ICU!!!
 
 # Nuget
 
-| **名称** |      **Nuget**      |
+| **Name** |      **Nuget**      |
 |----------|:-------------:|
 | **LBON.Consts** | **[![NuGet](https://buildstats.info/nuget/LBON.Consts)](https://www.nuget.org/packages/LBON.Consts)** |
 | **LBON.Extensions** | **[![NuGet](https://buildstats.info/nuget/LBON.Extensions)](https://www.nuget.org/packages/LBON.Extensions)** |
@@ -24,9 +24,9 @@
 | **LBON.DependencyInjection** | **[![NuGet](https://buildstats.info/nuget/LBON.DependencyInjection)](https://www.nuget.org/packages/LBON.DependencyInjection)** |
 | **LBON.EntityFrameworkCore** | **[![NuGet](https://buildstats.info/nuget/LBON.EntityFrameworkCore)](https://www.nuget.org/packages/LBON.EntityFrameworkCore)** |
 
-# 功能模块
+# Function Module
 ## LBON.EntityFrameworkCore
-EntityFramework 底层实现和扩展类，包括创建审计字段、修改审计字段、删除审计字段和扩展字段的封装
+EntityFramework underlying implementation and extension classes, including the encapsulation of creating auditing fields, modifying auditing fields, deleting auditing fields, and extended fields
 
 ```Csharp
     public class FullAuditedEntity<TKey,TUser>:EntityBase<TKey>, ICreationAudited<TUser>, IModificationAudited<TUser>, IDeletionAudited<TUser>
@@ -40,7 +40,7 @@ EntityFramework 底层实现和扩展类，包括创建审计字段、修改审�
         public DateTime? DeletionTime { get; set; }
     }
 ```
-另外还添加ExtendableObjectExtensions扩展类去设置（SetData）、获取(GetData) ExtendableObject字段的值。封装IEfRepository，满足绝大部分EF操作
+Also add the ExtendableObjectExtensions extension class to set the (SetData), get the (GetData) ExtendableObject field value. Enapsulate IEfRepository, for most EF operations
 ```Csharp
         IQueryable<TEntity> GetAll(params Expression<Func<TEntity, object>>[] propertySelectors);
 
@@ -91,7 +91,7 @@ EntityFramework 底层实现和扩展类，包括创建审计字段、修改审�
 
         Task HardDeleteAsync(TEntity entity, bool autoSave = true);
 ```
-在.NET CORE 中使用的话，可以引入**LBON.EntityFrameworkCore**库，里面封装了对IEfRepository的以来注入，并且实现了对**IScopedDependency、ISingletonDependency、ITransientDependency**继承类的自动批量注入，方便使用者注入自身服务。
+.When used in NET CORE , the **LBON.EntityFrameworkCore** library can be introduced that encapsulates the since - injection of IEfRepository and enables the automatic batch injection of the **IScopedDependency、ISingletonDependency、ITransientDependency** inheritance class to facilitate users to inject their own services. 
 ```Csharp
 public void ConfigureServices(IServiceCollection services)
 {
