@@ -28,8 +28,10 @@ namespace Readme.Generator
             var classes = Assembly.Load("LBON.Extensions").GetTypes().Where(a => a.Name.EndsWith("Extensions")).ToList();
             foreach (var item in classes)
             {
-                //var dirPath = Path.Combine("Readmes", args[0]);
-                var filePath = Path.Combine(args[0], $"{item.Name.ToUpper()}_README.md");
+                //var filePath = Path.Combine(args[0], $"{item.Name.ToUpper()}_README.md");
+                var dirPath = Path.Combine("Readmes", args[0]);
+                var filePath = Path.Combine(dirPath, $"{item.Name.ToUpper()}_README.md");
+
                 if (File.Exists(filePath))
                 {
                     File.Delete(filePath);
@@ -59,9 +61,9 @@ namespace Readme.Generator
             var classes = Assembly.Load("LBON.Helper").GetTypes().Where(a => a.Name.EndsWith("Helper")).ToList();
             foreach (var item in classes)
             {
-                //var dirPath = "E:\\Codes\\LBON\\Readmes\\Helper";
-                //var dirPath = Path.Combine("Readmes", args[1]);
-                var filePath = Path.Combine(args[1], $"{item.Name.ToUpper()}_README.md");
+                var dirPath = Path.Combine("Readmes", args[1]);
+                var filePath = Path.Combine(dirPath, $"{item.Name.ToUpper()}_README.md");
+                //var filePath = Path.Combine(args[1], $"{item.Name.ToUpper()}_README.md");
                 if (File.Exists(filePath))
                 {
                     File.Delete(filePath);
